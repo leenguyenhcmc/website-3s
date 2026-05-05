@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>EUDR 12/2025: Cà phê Việt cần làm gì trong 90 ngày tới? — 3S TechCoop</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&family=Lato:wght@400;700;900&display=swap"/>
+<link rel="stylesheet" href="styles.css"/>
+</head>
+<body data-active-nav="insights">
+
+<section class="page-hero" style="padding:96px 0 64px">
+  <div class="container page-hero-inner">
+    <div class="crumbs">
+      <a href="index.html">Trang chủ</a><span class="sep">/</span>
+      <a href="insights.html">Insights</a><span class="sep">/</span>
+      <span class="here">CTO</span>
+    </div>
+    <span class="eyebrow" style="color:var(--accent);background:rgba(45,212,191,.12);padding:6px 14px;border-radius:99px;display:inline-flex;margin-bottom:24px">CTO · Compliance</span>
+    <h1 style="font-size:clamp(1.75rem,3.6vw,3rem);max-width:900px">EUDR 12/2025: Cà phê Việt cần làm gì trong 90 ngày tới?</h1>
+    <p class="lede" style="max-width:760px">Quy định EU về sản phẩm không phá rừng (EUDR) sắp có hiệu lực. Đây là playbook 3S đã triển khai cho 1 DN cà phê 25.000 tấn/năm — số hoá 8.000 hộ trồng trong 75 ngày.</p>
+    <div style="display:flex;gap:24px;align-items:center;margin-top:32px;color:rgba(255,255,255,.65);font-size:.9rem">
+      <div style="display:flex;align-items:center;gap:10px">
+        <div style="width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.08);display:grid;place-items:center;color:var(--accent);font-family:var(--font-display);font-weight:700">MT</div>
+        <div><strong style="color:#fff">Nguyễn Minh Tâm</strong> · CTO of 3S — Coffee POM</div>
+      </div>
+      <div>12/03/2026</div>
+      <div>12 phút đọc</div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--surface)">
+  <div class="container detail-wrap">
+    <article class="prose">
+      <p>EUDR (EU Deforestation Regulation) có hiệu lực 30/12/2025 cho doanh nghiệp lớn và 30/06/2026 cho SME. Cà phê là một trong 7 hàng hoá nằm trong scope. Nếu DN bạn XK cà phê sang EU — đây không phải là tuỳ chọn, mà là điều kiện cần để giữ thị trường.</p>
+<h2 id="eudr-y-u-c-u-g-c-th-">EUDR yêu cầu gì cụ thể?</h2>
+<p>3 nghĩa vụ bắt buộc:</p>
+<ul><li>Geolocation dữ liệu vùng trồng (polygon, không chỉ điểm)</li><li>Bằng chứng không phá rừng sau 31/12/2020 (ảnh vệ tinh)</li><li>Due Diligence Statement (DDS) cho mỗi lô hàng</li></ul>
+<blockquote>"Trên thực tế, 3S đã thấy 80% DN cà phê Việt chưa có hệ thống đáp ứng đầy đủ — kể cả những DN có chứng chỉ Rainforest Alliance hay 4C."</blockquote>
+<h2 id="playbook-75-ng-y-c-a-3s">Playbook 75 ngày của 3S</h2>
+<h3>Tuần 1–2 — Mapping vùng nguyên liệu</h3>
+<p>Bước đầu tiên: biết bạn đang mua cà phê từ đâu. Nghe đơn giản nhưng phần lớn DN không có dữ liệu này. 3S triển khai app mobile cho đội thu mua — mỗi giao dịch ghi nhận ID hộ, GPS thửa đất, sản lượng, ngày giao.</p>
+<h3>Tuần 3–6 — Polygon hoá thửa đất</h3>
+<p>Điểm GPS chưa đủ. EUDR yêu cầu polygon (đa giác) cho mọi thửa >4ha. 3S kết hợp đo bằng app + ảnh vệ tinh Sentinel-2 để vẽ chính xác từng thửa. Output là geojson chuẩn EU TRACES.</p>
+<h3>Tuần 7–10 — Forest cover analysis</h3>
+<p>Dùng ảnh vệ tinh Hansen Global Forest Watch để chứng minh thửa đất không có forest cover từ 31/12/2020. Trường hợp có conflict — phải có evidence và corrective action.</p>
+<h3>Tuần 11 — DDS pipeline</h3>
+<p>Tích hợp ERP/lot management để mỗi lô XK auto-generate DDS đính kèm geolocation, traceability chain, risk assessment. Submit qua TRACES NT API.</p>
+<h2 id="3-sai-l-m-th-ng-g-p">3 sai lầm thường gặp</h2>
+<ul><li>Nghĩ rằng chứng chỉ Rainforest hay 4C đã đủ — không, EUDR là regulation riêng</li><li>Outsource toàn bộ cho consultant — kết quả dữ liệu rời rạc, không integrated với ERP</li><li>Bỏ qua đào tạo đội thu mua — họ là front-line, không có dữ liệu họ thu thì không có dữ liệu nào hết</li></ul>
+<h2 id="chi-ph-th-c-t-">Chi phí thực tế</h2>
+<p>POM của 3S cho DN cà phê 25K tấn/năm — tổng chi phí EUDR readiness ~$180K (app, satellite, audit, integration). Tương đương ~$7/tấn. Với giá cà phê ~$5.000/tấn, đây là chi phí 0.14% — không đáng kể so với rủi ro mất thị trường EU (~35% doanh thu).</p>
+<blockquote>"Câu hỏi không phải là chi phí EUDR. Câu hỏi là chi phí KHÔNG có EUDR khi 12/2025 đến."</blockquote>
+    </article>
+    <aside class="detail-aside">
+      <div class="aside-card">
+        <h5>Tác giả</h5>
+        <div class="author">
+          <div class="av">MT</div>
+          <div>
+            <div class="nm">Nguyễn Minh Tâm</div>
+            <div class="ti">CTO of 3S — Coffee POM</div>
+          </div>
+        </div>
+        <p style="font-size:.85rem;color:var(--muted);line-height:1.55">CxO of 3S đang on-the-ground triển khai POM thực tế — không phải tư vấn slide.</p>
+      </div>
+      <div class="aside-card">
+        <h5>Mục lục</h5>
+        <div class="toc-list"><a href="#eudr-y-u-c-u-g-c-th-">EUDR yêu cầu gì cụ thể?</a><a href="#playbook-75-ng-y-c-a-3s">Playbook 75 ngày của 3S</a><a href="#3-sai-l-m-th-ng-g-p">3 sai lầm thường gặp</a><a href="#chi-ph-th-c-t-">Chi phí thực tế</a></div>
+      </div>
+      <div class="aside-card" style="background:var(--teal-deep);border-color:var(--teal-deep);color:#fff">
+        <h5 style="color:rgba(255,255,255,.6)">Đặt diagnostic</h5>
+        <p style="font-size:.9rem;color:rgba(255,255,255,.85);line-height:1.55;margin-bottom:14px">Doanh nghiệp bạn đang gặp vấn đề tương tự? 90 phút miễn phí với 3S.</p>
+        <a href="lien-he.html" class="btn btn-primary" style="width:100%;justify-content:center">Liên hệ ngay</a>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="section alt-bg">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow"><span class="dot"></span>Đọc thêm</span>
+      <h2>Bài viết liên quan.</h2>
+    </div>
+    <div class="in-grid lg">
+    <a href="insight-thi-truong-nhat.html" class="in-card">
+      <div class="in-thumb"><div class="in-thumb-bg" style="background:linear-gradient(135deg,#033a3a 0%,#008282 100%)"></div><span class="in-thumb-tag">3S</span></div>
+      <div class="in-body">
+        <span class="in-tag">Insight</span>
+        <h3>Sầu riêng đông lạnh sang Nhật: 5 yêu cầu</h3>
+      </div>
+    </a>
+    <a href="insight-tai-chinh-xk.html" class="in-card">
+      <div class="in-thumb"><div class="in-thumb-bg" style="background:linear-gradient(135deg,#033a3a 0%,#008282 100%)"></div><span class="in-thumb-tag">3S</span></div>
+      <div class="in-body">
+        <span class="in-tag">Insight</span>
+        <h3>Cấu trúc vốn cho DN XK: 4 sai lầm</h3>
+      </div>
+    </a>
+    <a href="insight-pom.html" class="in-card">
+      <div class="in-thumb"><div class="in-thumb-bg" style="background:linear-gradient(135deg,#033a3a 0%,#008282 100%)"></div><span class="in-thumb-tag">3S</span></div>
+      <div class="in-body">
+        <span class="in-tag">Insight</span>
+        <h3>Chuyển giao thế hệ: Vì sao 70% thất bại?</h3>
+      </div>
+    </a></div>
+  </div>
+</section>
+
+<script src="shared.js"></script>
+</body>
+</html>

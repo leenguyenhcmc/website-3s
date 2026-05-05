@@ -1,0 +1,688 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8" />
+<title>Sitemap — Website 3S</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Raleway:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --teal:#008282;
+    --teal-dark:#006B6B;
+    --teal-deep:#033a3a;
+    --accent:#2dd4bf;
+    --surface:#F5F5F4;
+    --surface-2:#EFEEEC;
+    --border:#E7E5E4;
+    --ink:#1C1917;
+    --body:#44403C;
+    --muted:#78716C;
+    --white:#fff;
+    --font-sans:'Lato',ui-sans-serif,system-ui,sans-serif;
+    --font-display:'Raleway',ui-sans-serif,system-ui,sans-serif;
+    --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+    --ease:cubic-bezier(.4,0,.2,1);
+    --shadow-sub:0 2px 10px rgba(0,0,0,.02);
+    --shadow-accent:0 10px 15px -3px rgba(0,130,130,.10),0 4px 6px -4px rgba(0,130,130,.10);
+    --shadow-heavy:0 20px 40px rgba(0,130,130,.08);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;height:100%;overflow:hidden;background:var(--surface);font-family:var(--font-sans);color:var(--body)}
+  h1,h2,h3,h4{font-family:var(--font-display);color:var(--ink);font-weight:700;letter-spacing:-.02em;line-height:1.1;margin:0}
+
+  /* ─── Top bar ───────────────────────────────────────────────── */
+  .topbar{
+    position:fixed;top:0;left:0;right:0;height:64px;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:0 24px;background:rgba(245,245,244,.85);backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--border);z-index:50;
+  }
+  .brand{display:flex;align-items:center;gap:12px}
+  .brand-mark{
+    width:32px;height:32px;border-radius:8px;background:var(--teal-deep);
+    display:grid;place-items:center;color:var(--accent);font-family:var(--font-display);font-weight:800;font-size:14px;
+  }
+  .brand-title{font-family:var(--font-display);font-weight:700;color:var(--ink);font-size:15px;letter-spacing:-.01em}
+  .brand-sub{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.15em;font-weight:700;margin-top:2px}
+
+  .topbar-right{display:flex;align-items:center;gap:8px}
+  .legend{display:flex;align-items:center;gap:14px;margin-right:8px;padding-right:14px;border-right:1px solid var(--border)}
+  .legend-item{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--body);font-weight:500}
+  .legend-swatch{width:10px;height:10px;border-radius:3px}
+
+  .seg{display:inline-flex;background:var(--white);border:1px solid var(--border);border-radius:10px;padding:3px;box-shadow:var(--shadow-sub)}
+  .seg button{
+    border:0;background:transparent;font:inherit;padding:6px 12px;border-radius:7px;
+    font-size:12px;font-weight:700;color:var(--body);cursor:pointer;transition:all .2s var(--ease);
+    letter-spacing:.02em;
+  }
+  .seg button.is-active{background:var(--teal);color:#fff;box-shadow:var(--shadow-sub)}
+  .seg button:not(.is-active):hover{color:var(--teal)}
+
+  .icon-btn{
+    width:36px;height:36px;border-radius:10px;border:1px solid var(--border);background:var(--white);
+    color:var(--body);display:grid;place-items:center;cursor:pointer;transition:all .2s var(--ease);
+  }
+  .icon-btn:hover{color:var(--teal);border-color:color-mix(in srgb,var(--teal) 30%, var(--border))}
+
+  /* ─── Stage ─────────────────────────────────────────────────── */
+  .stage{position:fixed;inset:64px 0 0 0;overflow:hidden;cursor:grab}
+  .stage.is-panning{cursor:grabbing}
+  .stage::before{
+    content:"";position:absolute;inset:0;
+    background-image:radial-gradient(var(--border) 1px,transparent 1px);
+    background-size:24px 24px;background-position:0 0;
+    opacity:.7;pointer-events:none;
+  }
+  .stage::after{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    background:
+      radial-gradient(ellipse 70% 50% at 20% 10%, color-mix(in srgb, var(--accent) 12%, transparent), transparent 70%),
+      radial-gradient(ellipse 60% 40% at 90% 90%, color-mix(in srgb, var(--teal) 8%, transparent), transparent 70%);
+  }
+  .canvas{position:absolute;left:50%;top:50%;transform-origin:0 0;will-change:transform;}
+
+  /* ─── SVG connectors ────────────────────────────────────────── */
+  svg.lines{position:absolute;left:0;top:0;overflow:visible;pointer-events:none}
+  svg.lines path{
+    fill:none;stroke:#C8C2BC;stroke-width:1.5;
+    transition:stroke .25s var(--ease),stroke-width .25s var(--ease);
+  }
+  svg.lines path.is-hot{stroke:var(--teal);stroke-width:2}
+
+  /* ─── Nodes ─────────────────────────────────────────────────── */
+  .node{
+    position:absolute;background:var(--white);border:1px solid var(--border);border-radius:14px;
+    padding:14px 16px;box-shadow:var(--shadow-sub);min-width:170px;
+    transition:transform .25s var(--ease),box-shadow .25s var(--ease),border-color .25s var(--ease);
+    cursor:pointer;
+  }
+  .node:hover{transform:translate(-50%,-50%) translateY(-2px);box-shadow:var(--shadow-accent);border-color:color-mix(in srgb,var(--teal) 35%,var(--border))}
+  .node.is-active{border-color:var(--teal);box-shadow:var(--shadow-accent)}
+  .node-tag{
+    font-size:9.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--muted);margin-bottom:6px;display:flex;align-items:center;gap:6px;
+  }
+  .node-tag .dot{width:6px;height:6px;border-radius:50%;background:var(--teal)}
+  .node-title{font-family:var(--font-display);font-size:15px;font-weight:700;color:var(--ink);letter-spacing:-.01em;line-height:1.25}
+  .node-file{font-family:var(--font-mono);font-size:10.5px;color:var(--teal);margin-top:6px;font-weight:500}
+  .node-meta{font-size:11px;color:var(--muted);margin-top:4px;line-height:1.45}
+
+  /* Variant: root */
+  .node--root{
+    background:var(--teal-deep);border-color:var(--teal-deep);min-width:240px;padding:18px 22px;
+    box-shadow:var(--shadow-heavy);
+  }
+  .node--root .node-tag{color:var(--accent)}
+  .node--root .node-tag .dot{background:var(--accent);box-shadow:0 0 0 4px color-mix(in srgb, var(--accent) 20%, transparent)}
+  .node--root .node-title{color:#fff;font-size:18px}
+  .node--root .node-file{color:color-mix(in srgb, var(--accent) 90%, white)}
+  .node--root .node-meta{color:rgba(255,255,255,.7)}
+
+  /* Variant: section (cấp 1) */
+  .node--section{
+    background:var(--white);border-width:1.5px;
+  }
+  .node--section .node-tag{color:var(--teal)}
+
+  /* Variant: leaf small */
+  .node--leaf{min-width:160px;padding:10px 12px;}
+  .node--leaf .node-title{font-size:13px;font-weight:700}
+  .node--leaf .node-file{font-size:9.5px;margin-top:4px}
+  .node--leaf .node-tag{display:none}
+
+  /* Variant: warning (orphan) */
+  .node--warn{border-style:dashed;border-color:#D6A06A;background:color-mix(in srgb,#F4C988 18%,white)}
+  .node--warn .node-tag{color:#A8651A}
+  .node--warn .node-tag .dot{background:#C68A3A}
+
+  /* Section badge - count */
+  .count-pill{
+    display:inline-flex;align-items:center;gap:4px;
+    font-size:10px;font-weight:700;color:var(--teal);
+    background:color-mix(in srgb,var(--teal) 10%, white);
+    padding:2px 7px;border-radius:99px;margin-left:6px;
+    letter-spacing:.05em;
+  }
+
+  /* ─── Sidebar / Inspector ─────────────────────────────────── */
+  .inspector{
+    position:fixed;top:80px;right:16px;width:340px;max-height:calc(100vh - 96px);
+    background:var(--white);border:1px solid var(--border);border-radius:20px;
+    box-shadow:var(--shadow-heavy);padding:0;z-index:40;overflow:hidden;
+    display:flex;flex-direction:column;
+    transform:translateX(calc(100% + 32px));opacity:0;transition:all .35s var(--ease);
+  }
+  .inspector.is-open{transform:translateX(0);opacity:1}
+  .inspector-head{
+    padding:18px 20px 14px;border-bottom:1px solid var(--border);
+    background:linear-gradient(180deg, color-mix(in srgb,var(--teal) 6%, white), white);
+  }
+  .inspector-eyebrow{font-size:10.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--teal);margin-bottom:6px}
+  .inspector-title{font-family:var(--font-display);font-size:22px;font-weight:700;color:var(--ink);letter-spacing:-.02em;line-height:1.15;margin-bottom:8px}
+  .inspector-file{font-family:var(--font-mono);font-size:12px;color:var(--teal-dark);background:var(--surface);display:inline-block;padding:4px 10px;border-radius:6px;border:1px solid var(--border)}
+  .inspector-close{
+    position:absolute;top:14px;right:14px;width:28px;height:28px;border-radius:8px;
+    border:0;background:transparent;color:var(--muted);cursor:pointer;display:grid;place-items:center;
+  }
+  .inspector-close:hover{background:var(--surface);color:var(--ink)}
+  .inspector-body{padding:18px 20px;overflow-y:auto;flex:1}
+  .inspector-body p{font-size:13px;line-height:1.6;color:var(--body);margin:0 0 12px}
+  .inspector-section-label{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin:14px 0 8px}
+  .meta-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border);font-size:12.5px}
+  .meta-row:last-child{border-bottom:0}
+  .meta-row .k{color:var(--muted);font-weight:500}
+  .meta-row .v{color:var(--ink);font-weight:600;font-family:var(--font-mono);font-size:11.5px}
+  .child-list{display:flex;flex-direction:column;gap:6px;margin-top:6px}
+  .child-list a{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:8px 12px;background:var(--surface);border-radius:8px;
+    color:var(--ink);font-size:12.5px;font-weight:500;
+    text-decoration:none;border:1px solid transparent;transition:all .2s var(--ease);
+  }
+  .child-list a:hover{border-color:color-mix(in srgb,var(--teal) 30%, var(--border));background:color-mix(in srgb,var(--teal) 5%, white);color:var(--teal-dark)}
+  .child-list a code{font-family:var(--font-mono);font-size:10.5px;color:var(--muted);font-weight:500}
+
+  /* ─── Stats panel ────────────────────────────────────────────── */
+  .stats{
+    position:fixed;left:16px;bottom:16px;display:flex;gap:8px;z-index:30;
+  }
+  .stat-card{
+    background:var(--white);border:1px solid var(--border);border-radius:12px;
+    padding:10px 14px;box-shadow:var(--shadow-sub);min-width:90px;
+  }
+  .stat-num{font-family:var(--font-display);font-weight:800;font-size:22px;color:var(--ink);letter-spacing:-.02em;line-height:1}
+  .stat-label{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.16em;font-weight:700;margin-top:4px}
+  .stat-num .accent{color:var(--teal)}
+
+  /* ─── Zoom controls ───────────────────────────────────────────── */
+  .zoom-ctl{
+    position:fixed;right:16px;bottom:16px;display:flex;flex-direction:column;
+    background:var(--white);border:1px solid var(--border);border-radius:12px;
+    box-shadow:var(--shadow-sub);overflow:hidden;z-index:30;
+  }
+  .zoom-ctl button{
+    width:40px;height:36px;border:0;background:transparent;color:var(--ink);font-size:16px;cursor:pointer;
+    display:grid;place-items:center;border-bottom:1px solid var(--border);transition:all .2s var(--ease);
+  }
+  .zoom-ctl button:last-child{border-bottom:0}
+  .zoom-ctl button:hover{background:var(--surface);color:var(--teal)}
+  .zoom-readout{
+    font-family:var(--font-mono);font-size:10.5px;color:var(--muted);text-align:center;
+    padding:6px 0;border-bottom:1px solid var(--border);font-weight:500;
+  }
+
+  /* Hint */
+  .hint{
+    position:fixed;left:50%;top:80px;transform:translateX(-50%);
+    background:rgba(28,25,23,.92);color:#fff;padding:8px 14px;border-radius:99px;
+    font-size:12px;font-weight:500;letter-spacing:.02em;backdrop-filter:blur(8px);
+    z-index:30;pointer-events:none;animation:hintFade 5s ease 1s forwards;
+  }
+  @keyframes hintFade{
+    0%,80%{opacity:1}
+    100%{opacity:0;visibility:hidden}
+  }
+  .hint kbd{
+    background:rgba(255,255,255,.15);border-radius:4px;padding:1px 6px;
+    font-family:var(--font-mono);font-size:11px;margin:0 2px;
+  }
+
+  /* List view */
+  .listview{
+    position:fixed;inset:64px 0 0 0;overflow:auto;display:none;
+    background:var(--surface);padding:32px 5vw 80px;
+  }
+  .listview.is-active{display:block}
+  .listview-inner{max-width:1100px;margin:0 auto}
+  .listview h2{font-size:28px;margin-bottom:8px}
+  .listview .lead{color:var(--muted);font-size:14px;margin-bottom:32px;max-width:60ch}
+  .lv-section{
+    background:var(--white);border:1px solid var(--border);border-radius:24px;
+    padding:24px 28px;margin-bottom:18px;box-shadow:var(--shadow-sub);
+  }
+  .lv-section-head{display:flex;align-items:center;gap:10px;margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid var(--border)}
+  .lv-section-head .marker{width:8px;height:32px;border-radius:4px;background:var(--teal)}
+  .lv-section-head h3{font-size:18px}
+  .lv-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px}
+  .lv-card{
+    display:flex;flex-direction:column;gap:4px;padding:12px 14px;
+    background:var(--surface);border:1px solid var(--border);border-radius:10px;
+    text-decoration:none;transition:all .2s var(--ease);
+  }
+  .lv-card:hover{border-color:color-mix(in srgb,var(--teal) 35%, var(--border));background:color-mix(in srgb,var(--teal) 4%, white)}
+  .lv-card .t{font-family:var(--font-display);font-weight:700;color:var(--ink);font-size:14px}
+  .lv-card .f{font-family:var(--font-mono);font-size:10.5px;color:var(--teal);font-weight:500}
+  .lv-card.warn{border-style:dashed;border-color:#D6A06A}
+  .lv-card.warn .f::after{content:" • orphan";color:#A8651A;font-style:italic;font-weight:400}
+</style>
+</head>
+<body>
+
+<!-- ─── TOP BAR ─── -->
+<header class="topbar">
+  <div class="brand">
+    <div class="brand-mark">3S</div>
+    <div>
+      <div class="brand-title">Website 3S — Sitemap</div>
+      <div class="brand-sub">21 trang · Cập nhật 02·05·2026 · v2</div>
+    </div>
+  </div>
+  <div class="topbar-right">
+    <div class="legend">
+      <div class="legend-item"><span class="legend-swatch" style="background:var(--teal-deep)"></span>Trang chủ</div>
+      <div class="legend-item"><span class="legend-swatch" style="background:var(--teal)"></span>Section</div>
+      <div class="legend-item"><span class="legend-swatch" style="background:var(--white);border:1px solid var(--border)"></span>Trang</div>
+    </div>
+    <div class="seg" id="viewSeg">
+      <button class="is-active" data-view="diagram">Diagram</button>
+      <button data-view="list">Danh sách</button>
+    </div>
+    <button class="icon-btn" id="fitBtn" title="Fit to screen">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7V3h4M21 7V3h-4M3 17v4h4M21 17v4h-4"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- ─── HINT ─── -->
+<div class="hint" id="hint">Kéo để di chuyển · <kbd>Cuộn</kbd> để zoom · Click node để xem chi tiết</div>
+
+<!-- ─── DIAGRAM STAGE ─── -->
+<div class="stage" id="stage">
+  <div class="canvas" id="canvas">
+    <svg class="lines" id="lines" width="3000" height="2400"></svg>
+    <!-- nodes injected by JS -->
+  </div>
+</div>
+
+<!-- ─── INSPECTOR ─── -->
+<aside class="inspector" id="inspector">
+  <div class="inspector-head">
+    <button class="inspector-close" id="inspClose" title="Đóng">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+    <div class="inspector-eyebrow" id="inspEyebrow">Section</div>
+    <h3 class="inspector-title" id="inspTitle">—</h3>
+    <span class="inspector-file" id="inspFile">—</span>
+  </div>
+  <div class="inspector-body" id="inspBody">
+    <p>Click vào một node trong sitemap để xem chi tiết.</p>
+  </div>
+</aside>
+
+<!-- ─── STATS ─── -->
+<div class="stats">
+  <div class="stat-card"><div class="stat-num">21</div><div class="stat-label">Tổng trang</div></div>
+  <div class="stat-card"><div class="stat-num">6</div><div class="stat-label">Mục cấp 1</div></div>
+  <div class="stat-card"><div class="stat-num"><span class="accent">10</span></div><div class="stat-label">Ngành hàng</div></div>
+</div>
+
+<!-- ─── ZOOM CTL ─── -->
+<div class="zoom-ctl">
+  <button id="zoomIn" title="Zoom in">+</button>
+  <div class="zoom-readout" id="zoomReadout">100%</div>
+  <button id="zoomOut" title="Zoom out">−</button>
+</div>
+
+<!-- ─── LIST VIEW ─── -->
+<section class="listview" id="listview">
+  <div class="listview-inner">
+    <div class="eyebrow" style="font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--teal);margin-bottom:10px">Sitemap · Danh sách phẳng</div>
+    <h2>21 trang được nhóm theo 7 mục</h2>
+    <p class="lead">Cùng dữ liệu với chế độ Diagram, hiển thị dạng bảng để dễ scan và copy. Các trang <em>orphan</em> hiện chưa có entry trong nav chính.</p>
+    <div id="lvContainer"></div>
+  </div>
+</section>
+
+<script>
+/* ─── DATA ──────────────────────────────────────────────────────────── */
+const data = {
+  id:'home', kind:'root',
+  title:'Trang chủ',
+  file:'index.html',
+  desc:'Long-scrolling homepage. Hero, vai trò 5 C-level, ngành hàng marquee, hệ sinh thái, insights mới nhất, footer CTA kép.',
+  meta:{ Loại:'Landing', 'Cấp':'0', 'Backlinks':'21' },
+  children:[
+    { id:'sol', kind:'section', tag:'Giải pháp', count:5,
+      title:'Giải pháp theo vai trò C-level',
+      file:'cmo.html',
+      desc:'Hub cho 5 trang giải pháp định vị theo từng nhóm lãnh đạo doanh nghiệp.',
+      meta:{ Loại:'Hub', Cấp:'1', 'Trang con':'5' },
+      children:[
+        { id:'cmo', title:'CMO — Phát triển thị trường XK', file:'cmo.html', desc:'Phát triển kênh xuất khẩu cho lãnh đạo Marketing/Thương mại.' },
+        { id:'cpo', title:'CPO — Quản trị nhà máy & sản phẩm', file:'cpo.html', desc:'Vận hành nhà máy, danh mục sản phẩm và chất lượng.' },
+        { id:'cfo', title:'CFO — Quản trị tài chính', file:'cfo.html', desc:'Dòng tiền, vốn lưu động, quản trị rủi ro tài chính trong chuỗi cung ứng.' },
+        { id:'cto', title:'CTO — Chuyển đổi số', file:'cto.html', desc:'Hạ tầng số, dữ liệu và tự động hoá quy trình.' },
+        { id:'cdo', title:'CDO — Kế thừa & tổ chức', file:'cdo.html', desc:'Phát triển con người, cấu trúc tổ chức, kế thừa.' },
+      ] },
+
+    { id:'ind', kind:'section', tag:'Ngành hàng', count:10,
+      title:'Ngành hàng nông sản',
+      file:'sau-rieng.html',
+      desc:'10 trang ngành hàng. Mỗi trang giới thiệu chuỗi giá trị + giải pháp 3S theo từng loại cây/sản phẩm.',
+      meta:{ Loại:'Hub', Cấp:'1', 'Trang con':'10' },
+      children:[
+        { id:'cay-dieu',  title:'Cây điều',     file:'cay-dieu.html' },
+        { id:'ca-phe',    title:'Cây cà phê',   file:'ca-phe.html' },
+        { id:'mi-lat',    title:'Mì lát (sắn)', file:'mi-lat.html' },
+        { id:'sau-rieng', title:'Cây sầu riêng',file:'sau-rieng.html' },
+        { id:'lua-nuoc',  title:'Lúa nước',     file:'lua-nuoc.html' },
+        { id:'gao',      title:'Gạo',          file:'gao.html' },
+        { id:'thuy-san',  title:'Thuỷ sản',     file:'thuy-san.html' },
+        { id:'que-hoi',   title:'Quế hồi',      file:'que-hoi.html' },
+        { id:'ho-tieu',  title:'Hồ tiêu',      file:'ho-tieu.html' },
+        { id:'chanh-day', title:'Chanh dây',    file:'chanh-day.html' },
+      ] },
+
+    { id:'eco', kind:'section', tag:'Hệ sinh thái', count:1,
+      title:'Hệ sinh thái',
+      file:'he-sinh-thai.html',
+      desc:'Trang giới thiệu mạng lưới đối tác, nhà đầu tư, thành viên hệ sinh thái 3S.',
+      meta:{ Loại:'Page', Cấp:'1' },
+      children:[] },
+
+    { id:'ins', kind:'section', tag:'Insights', count:2,
+      title:'Insights / Tin tức',
+      file:'insights.html',
+      desc:'Hub bài viết. Hiện chỉ có 1 template chi tiết — nên mở rộng thành nhiều bài hoặc kết nối CMS.',
+      meta:{ Loại:'Hub', Cấp:'1', 'Trang con':'1 template' },
+      children:[
+        { id:'ins-detail', title:'Chi tiết bài viết', file:'chi-tiet-bai-viet.html', desc:'Template trang detail dùng chung cho mọi bài insight.' },
+      ] },
+
+    { id:'about', kind:'section', tag:'Về chúng tôi', count:1,
+      title:'Về 3S',
+      file:'ve-chung-toi.html',
+      desc:'Câu chuyện thương hiệu, hành trình tăng trưởng, đội ngũ, giá trị cốt lõi.',
+      meta:{ Loại:'Page', Cấp:'1' },
+      children:[] },
+
+    { id:'contact', kind:'section', tag:'Liên hệ', count:1,
+      title:'Liên hệ',
+      file:'lien-he.html',
+      desc:'Form tư vấn + thông tin liên hệ. CTA đích cuối của mọi flow chuyển đổi.',
+      meta:{ Loại:'Page', Cấp:'1' },
+      children:[] },
+  ]
+};
+
+/* ─── LAYOUT ENGINE ────────────────────────────────────────────────────
+   Root at center-top. Sections fanned out below in 2 rows for breathing room.
+   Section children stacked vertically below their section.
+*/
+const layout = (() => {
+  // Manual layout — gives nicest breathing room.
+  const SECTION_Y = 280;
+  const LEAF_START_Y = 470;
+  const LEAF_GAP = 56;
+
+  // x positions for the 6 sections
+  const sectionX = {
+    sol:     -780,
+    ind:     -360,
+    eco:        80,
+    ins:      420,
+    about:    720,
+    contact: 1020,
+  };
+
+  const positions = {};
+  positions.home = { x: 0, y: 0 };
+
+  data.children.forEach(sec => {
+    positions[sec.id] = { x: sectionX[sec.id], y: SECTION_Y };
+    sec.children.forEach((leaf, i) => {
+      positions[leaf.id] = { x: sectionX[sec.id], y: LEAF_START_Y + i*LEAF_GAP };
+    });
+  });
+
+  return positions;
+})();
+
+/* ─── RENDER NODES ────────────────────────────────────────────────────── */
+const canvas = document.getElementById('canvas');
+const lines = document.getElementById('lines');
+
+function makeNode(n, kind, parentId){
+  const el = document.createElement('div');
+  el.className = 'node node--' + kind + (n.warn ? ' node--warn' : '');
+  el.dataset.id = n.id;
+  if (parentId) el.dataset.parent = parentId;
+  const pos = layout[n.id];
+  el.style.left = pos.x + 'px';
+  el.style.top  = pos.y + 'px';
+  el.style.transform = 'translate(-50%,-50%)';
+
+  let inner = '';
+  if (kind === 'root'){
+    inner = `
+      <div class="node-tag"><span class="dot"></span>Entry · Homepage</div>
+      <div class="node-title">${n.title}</div>
+      <div class="node-file">${n.file}</div>
+      <div class="node-meta">Long-scroll · 21 backlinks</div>`;
+  } else if (kind === 'section'){
+    inner = `
+      <div class="node-tag"><span class="dot"></span>${n.tag}<span class="count-pill">${n.count}</span></div>
+      <div class="node-title">${n.title}</div>
+      <div class="node-file">${n.file}</div>`;
+  } else {
+    inner = `
+      <div class="node-title">${n.title}</div>
+      <div class="node-file">${n.file}</div>`;
+  }
+  el.innerHTML = inner;
+  el.addEventListener('click', e => { e.stopPropagation(); openInspector(n, kind, parentId); });
+  canvas.appendChild(el);
+}
+
+makeNode(data, 'root');
+data.children.forEach(sec => {
+  makeNode(sec, 'section', 'home');
+  sec.children.forEach(leaf => makeNode({ ...leaf, parent: sec }, 'leaf', sec.id));
+});
+
+/* ─── DRAW CONNECTORS ─────────────────────────────────────────────────── */
+function drawLines(){
+  let pathD = '';
+  // root → sections
+  const home = layout.home;
+  data.children.forEach(sec => {
+    const s = layout[sec.id];
+    pathD += curve(home.x, home.y + 38, s.x, s.y - 38);
+    sec.children.forEach((leaf, i) => {
+      const prev = i === 0 ? { x: s.x, y: s.y + 30 } : layout[sec.children[i-1].id];
+      const cur  = layout[leaf.id];
+      // straight tee for leaves
+      pathD += `M ${s.x} ${cur.y - 28} L ${cur.x} ${cur.y - 28} `;
+      if (i === 0) pathD += `M ${s.x} ${s.y + 30} L ${s.x} ${cur.y - 28} `;
+      else pathD += `M ${s.x} ${prev.y + 28} L ${s.x} ${cur.y - 28} `;
+    });
+  });
+  lines.innerHTML = `<path d="${pathD}" />`;
+}
+function curve(x1,y1,x2,y2){
+  const cy = (y1 + y2) / 2;
+  return `M ${x1} ${y1} C ${x1} ${cy}, ${x2} ${cy}, ${x2} ${y2} `;
+}
+drawLines();
+
+/* ─── PAN / ZOOM ──────────────────────────────────────────────────────── */
+const stage = document.getElementById('stage');
+const zoomReadout = document.getElementById('zoomReadout');
+let tx=0, ty=0, scale=1;
+const setT = () => {
+  canvas.style.transform = `translate(${tx}px, ${ty}px) scale(${scale})`;
+  zoomReadout.textContent = Math.round(scale*100) + '%';
+};
+function fit(){
+  // compute bounds
+  const xs = Object.values(layout).map(p=>p.x);
+  const ys = Object.values(layout).map(p=>p.y);
+  const minX = Math.min(...xs)-200, maxX = Math.max(...xs)+200;
+  const minY = Math.min(...ys)-100, maxY = Math.max(...ys)+100;
+  const w = maxX - minX, h = maxY - minY;
+  const sw = stage.clientWidth - 360; // leave room for inspector
+  const sh = stage.clientHeight - 80;
+  scale = Math.min(sw/w, sh/h, 1);
+  tx = -((minX+maxX)/2)*scale;
+  ty = -((minY+maxY)/2)*scale + (sh*0.02);
+  setT();
+}
+window.addEventListener('load', () => setTimeout(fit, 50));
+window.addEventListener('resize', () => fit());
+
+let dragging=false, sx=0, sy=0, stx=0, sty=0;
+stage.addEventListener('mousedown', e => {
+  if (e.target.closest('.node')) return;
+  dragging=true; sx=e.clientX; sy=e.clientY; stx=tx; sty=ty;
+  stage.classList.add('is-panning');
+});
+window.addEventListener('mousemove', e => {
+  if (!dragging) return;
+  tx = stx + (e.clientX - sx);
+  ty = sty + (e.clientY - sy);
+  setT();
+});
+window.addEventListener('mouseup', () => { dragging=false; stage.classList.remove('is-panning'); });
+
+stage.addEventListener('wheel', e => {
+  e.preventDefault();
+  const rect = stage.getBoundingClientRect();
+  const cx = e.clientX - rect.left - rect.width/2;
+  const cy = e.clientY - rect.top - rect.height/2;
+  const factor = e.deltaY < 0 ? 1.12 : 0.89;
+  const newScale = Math.max(.3, Math.min(2, scale * factor));
+  // zoom around cursor
+  tx = cx - (cx - tx) * (newScale/scale);
+  ty = cy - (cy - ty) * (newScale/scale);
+  scale = newScale;
+  setT();
+}, { passive:false });
+
+document.getElementById('zoomIn').onclick = () => { scale = Math.min(2, scale*1.15); setT(); };
+document.getElementById('zoomOut').onclick = () => { scale = Math.max(.3, scale*.87); setT(); };
+document.getElementById('fitBtn').onclick = fit;
+
+/* ─── INSPECTOR ────────────────────────────────────────────────────── */
+const inspector = document.getElementById('inspector');
+function openInspector(n, kind, parentId){
+  // mark active
+  document.querySelectorAll('.node.is-active').forEach(el => el.classList.remove('is-active'));
+  document.querySelector(`.node[data-id="${n.id}"]`)?.classList.add('is-active');
+
+  document.getElementById('inspEyebrow').textContent =
+    kind === 'root' ? 'Entry · Homepage' :
+    kind === 'section' ? (n.tag || 'Section') + ' · Cấp 1' :
+    'Trang con';
+  document.getElementById('inspTitle').textContent = n.title;
+  document.getElementById('inspFile').textContent = n.file;
+
+  const body = document.getElementById('inspBody');
+  let html = `<p>${n.desc || 'Trang trong hệ sitemap. Click vào trang con để khám phá tiếp.'}</p>`;
+
+  if (n.meta){
+    html += `<div class="inspector-section-label">Thông tin</div>`;
+    Object.entries(n.meta).forEach(([k,v]) => {
+      html += `<div class="meta-row"><span class="k">${k}</span><span class="v">${v}</span></div>`;
+    });
+  }
+
+  if (n.children && n.children.length){
+    html += `<div class="inspector-section-label">Trang con (${n.children.length})</div><div class="child-list">`;
+    n.children.forEach(c => {
+      html += `<a href="#" data-jump="${c.id}"><span>${c.title}</span><code>${c.file}</code></a>`;
+    });
+    html += `</div>`;
+  } else if (kind !== 'root'){
+    html += `<div class="inspector-section-label">Trạng thái</div>
+      <div class="meta-row"><span class="k">File</span><span class="v">${n.file || '—'}</span></div>`;
+  }
+
+  body.innerHTML = html;
+  inspector.classList.add('is-open');
+
+  body.querySelectorAll('a[data-jump]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const id = a.dataset.jump;
+      // find leaf
+      let target=null, parent=null;
+      data.children.forEach(s => s.children.forEach(c => { if (c.id===id){ target=c; parent=s; }}));
+      if (target) openInspector(target, 'leaf', parent.id);
+    });
+  });
+
+  // highlight path
+  document.querySelectorAll('svg.lines path').forEach(p => p.classList.remove('is-hot'));
+}
+document.getElementById('inspClose').onclick = () => {
+  inspector.classList.remove('is-open');
+  document.querySelectorAll('.node.is-active').forEach(el => el.classList.remove('is-active'));
+};
+document.getElementById('stage').addEventListener('click', e => {
+  if (!e.target.closest('.node')) {
+    inspector.classList.remove('is-open');
+    document.querySelectorAll('.node.is-active').forEach(el => el.classList.remove('is-active'));
+  }
+});
+
+/* ─── VIEW SWITCH ─────────────────────────────────────────────────────── */
+const viewSeg = document.getElementById('viewSeg');
+const listview = document.getElementById('listview');
+viewSeg.addEventListener('click', e => {
+  const btn = e.target.closest('button[data-view]');
+  if (!btn) return;
+  viewSeg.querySelectorAll('button').forEach(b => b.classList.toggle('is-active', b===btn));
+  if (btn.dataset.view === 'list'){
+    listview.classList.add('is-active');
+    document.getElementById('stage').style.display='none';
+    inspector.classList.remove('is-open');
+  } else {
+    listview.classList.remove('is-active');
+    document.getElementById('stage').style.display='';
+    setTimeout(fit, 50);
+  }
+});
+
+/* ─── LIST VIEW RENDER ────────────────────────────────────────────────── */
+const lvContainer = document.getElementById('lvContainer');
+data.children.forEach(sec => {
+  const div = document.createElement('div');
+  div.className = 'lv-section';
+  let cards = '';
+  // include the section page itself as a card if it's not the orphan group
+  if (!sec.warn){
+    cards += `<a class="lv-card" href="#" data-go="${sec.id}"><span class="t">${sec.title} <em style="font-style:normal;color:var(--muted);font-weight:400">· trang chính</em></span><span class="f">${sec.file}</span></a>`;
+  }
+  sec.children.forEach(c => {
+    cards += `<a class="lv-card ${c.warn?'warn':''}" href="#" data-go="${c.id}"><span class="t">${c.title}</span><span class="f">${c.file}</span></a>`;
+  });
+  div.innerHTML = `
+    <div class="lv-section-head">
+      <div class="marker" style="${sec.warn?'background:#C68A3A':''}"></div>
+      <h3>${sec.title}</h3>
+      <span class="count-pill" style="margin-left:auto">${sec.count} ${sec.count===1?'trang':'trang'}</span>
+    </div>
+    <div class="lv-grid">${cards}</div>`;
+  lvContainer.appendChild(div);
+});
+lvContainer.addEventListener('click', e => {
+  const a = e.target.closest('a[data-go]'); if (!a) return;
+  e.preventDefault();
+  const id = a.dataset.go;
+  // switch to diagram + open inspector
+  viewSeg.querySelector('button[data-view="diagram"]').click();
+  // find node
+  let target=null, parent=null, kind='leaf';
+  if (data.id === id){ target=data; kind='root'; }
+  data.children.forEach(s => {
+    if (s.id===id){ target=s; kind='section'; }
+    s.children.forEach(c => { if (c.id===id){ target=c; parent=s; }});
+  });
+  if (target) setTimeout(()=>openInspector(target, kind, parent?.id), 100);
+});
+</script>
+</body>
+</html>
