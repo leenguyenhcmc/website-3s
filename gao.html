@@ -13,23 +13,23 @@
   <div class="container page-hero-inner">
     <div>
       <div class="crumbs">
-        <a href="index.html">Trang chủ</a><span class="sep">/</span>
-        <span>Ngành hàng</span><span class="sep">/</span>
-        <span class="here">Gạo</span>
+        <a href="index.html" data-t="ind_home">Trang chủ</a><span class="sep">/</span>
+        <span data-t="ind_inds">Ngành hàng</span><span class="sep">/</span>
+        <span class="here" data-t="ind_rice">Gạo</span>
       </div>
       <span class="eyebrow" style="color:var(--accent);background:rgba(45,212,191,.12);padding:6px 14px;border-radius:99px;display:inline-flex;margin-bottom:24px">Rice</span>
-      <h1>Gạo Việt — <span class="accent">từ commodity đến gạo thương hiệu.</span></h1>
-      <p class="lede">Việt Nam là một trong 3 nước XK gạo lớn nhất. 3S hỗ trợ DN nâng cấp từ commodity sang gạo thương hiệu (ST24, ST25, japonica). Mở thị trường EU, Nhật, US qua kênh retail và HORECA.</p>
+      <h1 data-t="rice_h1">Gạo Việt — <span class="accent">An ninh lương thực & Giá trị cao.</span></h1>
+      <p class="lede" data-t="rice_lede">Chuyển dịch từ sản lượng sang chất lượng cao (ST25, gạo hữu cơ). 3S cùng doanh nghiệp xây dựng thương hiệu gạo quốc tế.</p>
       <div style="display:flex;gap:12px;margin-top:32px;flex-wrap:wrap">
-        <a href="lien-he.html" class="btn btn-primary">Đặt diagnostic ngành gạo
+        <a href="lien-he.html" class="btn btn-primary" data-t="ind_cta_btn_diag">Đặt diagnostic ngành gạo
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
         </a>
-        <a href="#chain" class="btn btn-ghost" style="border-color:rgba(255,255,255,.2);color:#fff">Xem chuỗi giá trị</a>
+        <a href="#chain" class="btn btn-ghost" style="border-color:rgba(255,255,255,.2);color:#fff" data-t="ind_view_chain">Xem chuỗi giá trị</a>
       </div>
     </div>
     <div class="hero-side-card">
-      <h4>Số liệu ngành gạo</h4>
-      <p style="color:rgba(255,255,255,.7);font-size:.92rem;line-height:1.55;margin-bottom:6px">Thống kê tổng hợp từ Tổng cục Hải quan, Hiệp hội ngành, MARD và đối tác hệ sinh thái 3S.</p>
+      <h4 data-t="ind_stats_title">Số liệu ngành gạo</h4>
+      <p style="color:rgba(255,255,255,.7);font-size:.92rem;line-height:1.55;margin-bottom:6px" data-t="ind_stats_desc">Thống kê tổng hợp từ Tổng cục Hải quan, Hiệp hội ngành, MARD và đối tác hệ sinh thái 3S.</p>
       <div class="factrow"><div><div class="k">XK 2024</div><div class="v">~9M tấn</div></div><div><div class="k">Doanh thu</div><div class="v">~$5.8B USD</div></div><div><div class="k">Thị trường chính</div><div class="v">Philippines, Indonesia, Africa</div></div><div><div class="k">Premium share</div><div class="v">~15%</div></div></div>
     </div>
   </div>
@@ -39,10 +39,15 @@
 <section class="section" id="chain">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow"><span class="dot"></span>Chuỗi giá trị</span>
-      <h2>4 mắt xích Gạo mà 3S can thiệp.</h2>
+      <span class="eyebrow"><span class="dot"></span><span data-t="ind_val_chain">Chuỗi giá trị</span></span>
+      <h2 data-t="ind_chain_h2">4 mắt xích Gạo mà 3S can thiệp.</h2>
     </div>
-    <div class="pillars"><div class="pillar"><div class="num">01</div><h3>Mua lúa & xay xát</h3><p>Mua lúa từ HTX qua hợp đồng bao tiêu. Xay xát hiện đại — máy SATAKE, BUHLER.</p></div><div class="pillar"><div class="num">02</div><h3>Phân loại & đánh bóng</h3><p>Color sorter, length grader. Tỷ lệ tấm <5%. Đánh bóng 2 lần.</p></div><div class="pillar"><div class="num">03</div><h3>Đóng gói thương hiệu</h3><p>Túi 1kg, 2kg, 5kg cho retail. Túi 25kg, 50kg cho HORECA & B2B.</p></div><div class="pillar"><div class="num">04</div><h3>Chứng nhận & XK</h3><p>HACCP, BRC, organic. Halal, Kosher tuỳ thị trường. Container 20ft/40ft.</p></div></div>
+    <div class="pillars">
+      <div class="pillar"><div class="num">01</div><h3 data-t="rice_node_1_h">Mua lúa & xay xát</h3><p data-t="rice_node_1_p">Mua lúa từ HTX qua hợp đồng bao tiêu. Xay xát hiện đại — máy SATAKE, BUHLER.</p></div>
+      <div class="pillar"><div class="num">02</div><h3 data-t="rice_node_2_h">Phân loại & đánh bóng</h3><p data-t="rice_node_2_p">Color sorter, length grader. Tỷ lệ tấm <5%. Đánh bóng 2 lần.</p></div>
+      <div class="pillar"><div class="num">03</div><h3 data-t="rice_node_3_h">Đóng gói thương hiệu</h3><p data-t="rice_node_3_p">Túi 1kg, 2kg, 5kg cho retail. Túi 25kg, 50kg cho HORECA & B2B.</p></div>
+      <div class="pillar"><div class="num">04</div><h3 data-t="rice_node_4_h">Chứng nhận & XK</h3><p data-t="rice_node_4_p">HACCP, BRC, organic. Halal, Kosher tuỳ thị trường. Container 20ft/40ft.</p></div>
+    </div>
   </div>
 </section>
 
@@ -50,8 +55,8 @@
 <section class="section alt-bg">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow"><span class="dot"></span>Thị trường xuất khẩu</span>
-      <h2>Đa dạng kênh khách hàng — <span class="ink-soft">không phụ thuộc một thị trường.</span></h2>
+      <span class="eyebrow"><span class="dot"></span><span data-t="ind_market_export">Thị trường xuất khẩu</span></span>
+      <h2 data-t="ind_market_h2">Đa dạng kênh khách hàng — <span class="ink-soft">không phụ thuộc một thị trường.</span></h2>
     </div>
     <div class="vsections"><div class="vsec"><div class="vnum">01</div><div><h3>Philippines</h3><p class="vsub">số 1</p></div><ul><li>3S hỗ trợ kết nối buyers anchor</li><li>Hợp đồng dài hạn, hedging tỷ giá</li><li>Tuân thủ tiêu chuẩn nhập khẩu</li></ul></div><div class="vsec"><div class="vnum">02</div><div><h3>Indonesia, Malaysia</h3><p class="vsub">Thị trường XK chiến lược</p></div><ul><li>3S hỗ trợ kết nối buyers anchor</li><li>Hợp đồng dài hạn, hedging tỷ giá</li><li>Tuân thủ tiêu chuẩn nhập khẩu</li></ul></div><div class="vsec"><div class="vnum">03</div><div><h3>Châu Phi</h3><p class="vsub">Ghana, Bờ Biển Ngà</p></div><ul><li>3S hỗ trợ kết nối buyers anchor</li><li>Hợp đồng dài hạn, hedging tỷ giá</li><li>Tuân thủ tiêu chuẩn nhập khẩu</li></ul></div><div class="vsec"><div class="vnum">04</div><div><h3>EU</h3><p class="vsub">gạo thơm thương hiệu</p></div><ul><li>3S hỗ trợ kết nối buyers anchor</li><li>Hợp đồng dài hạn, hedging tỷ giá</li><li>Tuân thủ tiêu chuẩn nhập khẩu</li></ul></div><div class="vsec"><div class="vnum">05</div><div><h3>Mỹ, Nhật</h3><p class="vsub">premium</p></div><ul><li>3S hỗ trợ kết nối buyers anchor</li><li>Hợp đồng dài hạn, hedging tỷ giá</li><li>Tuân thủ tiêu chuẩn nhập khẩu</li></ul></div></div>
   </div>
@@ -61,10 +66,15 @@
 <section class="section">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow"><span class="dot"></span>Thách thức ngành</span>
-      <h2>4 vấn đề chính 3S thường gặp.</h2>
+      <span class="eyebrow"><span class="dot"></span><span data-t="ind_challenge">Thách thức ngành</span></span>
+      <h2 data-t="ind_challenge_h2">4 vấn đề chính 3S thường gặp.</h2>
     </div>
-    <div class="pillars"><div class="pillar"><div class="num">!</div><h3>Cạnh tranh giá với Ấn Độ, Thái</h3><p>3S of CxO đề xuất giải pháp can thiệp dựa trên POM cụ thể.</p></div><div class="pillar"><div class="num">!</div><h3>Yêu cầu MRL khắt khe (EU)</h3><p>3S of CxO đề xuất giải pháp can thiệp dựa trên POM cụ thể.</p></div><div class="pillar"><div class="num">!</div><h3>Logistic & inflation chi phí</h3><p>3S of CxO đề xuất giải pháp can thiệp dựa trên POM cụ thể.</p></div><div class="pillar"><div class="num">!</div><h3>Brand-building cho gạo VN</h3><p>3S of CxO đề xuất giải pháp can thiệp dựa trên POM cụ thể.</p></div></div>
+    <div class="pillars">
+      <div class="pillar"><div class="num">!</div><h3 data-t="rice_chal_1_h">Cạnh tranh giá với Ấn Độ, Thái</h3><p data-t="rice_chal_1_p">3S of CxO đề xuất giải pháp can thiệp dựa trên POM cụ thể.</p></div>
+      <div class="pillar"><div class="num">!</div><h3 data-t="rice_chal_2_h">Yêu cầu MRL khắt khe (EU)</h3><p data-t="rice_chal_2_p">3S of CxO đề xuất giải pháp can thiệp dựa trên POM cụ thể.</p></div>
+      <div class="pillar"><div class="num">!</div><h3 data-t="rice_chal_3_h">Logistic & inflation chi phí</h3><p data-t="rice_chal_3_p">3S of CxO đề xuất giải pháp can thiệp dựa trên POM cụ thể.</p></div>
+      <div class="pillar"><div class="num">!</div><h3 data-t="rice_chal_4_h">Brand-building cho gạo VN</h3><p data-t="rice_chal_4_p">3S of CxO đề xuất giải pháp can thiệp dựa trên POM cụ thể.</p></div>
+    </div>
   </div>
 </section>
 
@@ -85,13 +95,13 @@
   <div class="container">
     <div class="cta-inner">
       <span class="eyebrow"><span class="dot"></span>Gạo</span>
-      <h2>Doanh nghiệp gạo của bạn cần CxO nào?</h2>
-      <p>Đặt diagnostic 90 phút miễn phí — chúng tôi rà soát 5 chức năng và đề xuất 1–2 vai trò CxO ưu tiên cho 90 ngày tiếp theo.</p>
+      <h2 data-t="ind_cta_h2">Doanh nghiệp của bạn cần CxO nào?</h2>
+      <p data-t="ind_cta_desc">Đặt diagnostic 90 phút miễn phí — chúng tôi rà soát 5 chức năng và đề xuất 1–2 vai trò CxO ưu tiên cho 90 ngày tiếp theo.</p>
       <div class="btns">
-        <a href="lien-he.html" class="btn btn-primary">Đặt lịch ngay
+        <a href="lien-he.html" class="btn btn-primary" data-t="ind_cta_btn_diag">Đặt lịch ngay
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
         </a>
-        <a href="cmo.html" class="btn btn-ghost">Xem 5 vai trò CxO</a>
+        <a href="cmo.html" class="btn btn-ghost" data-t="ind_cta_btn_roles">Xem 5 vai trò CxO</a>
       </div>
     </div>
   </div>

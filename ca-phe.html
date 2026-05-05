@@ -13,24 +13,24 @@
   <div class="container page-hero-inner">
     <div>
       <div class="crumbs">
-        <a href="index.html">Trang chủ</a><span class="sep">/</span>
-        <span>Ngành hàng</span><span class="sep">/</span>
+        <a href="index.html" data-t="ind_home">Trang chủ</a><span class="sep">/</span>
+        <span data-t="ind_inds">Ngành hàng</span><span class="sep">/</span>
         <span class="here">Cà phê</span>
       </div>
       <span class="eyebrow" style="color:var(--accent);background:rgba(45,212,191,.12);padding:6px 14px;border-radius:99px;display:inline-flex;margin-bottom:24px">Coffee</span>
-      <h1>Cà phê Việt — <span class="accent">specialty đến đại trà.</span></h1>
-      <p class="lede">Việt Nam là nước XK robusta số 1 thế giới. 3S đồng hành các DN cà phê từ chế biến đến rang xay, từ commodity sang specialty. Truy xuất nguồn gốc, EUDR-ready.</p>
+      <h1 data-t="coffee_h1">Cà phê Việt — <span class="accent">specialty đến đại trà.</span></h1>
+      <p class="lede" data-t="coffee_lede">Việt Nam là nước XK robusta số 1 thế giới. 3S đồng hành các DN cà phê từ chế biến đến rang xay, từ commodity sang specialty. Truy xuất nguồn gốc, EUDR-ready.</p>
       <div style="display:flex;gap:12px;margin-top:32px;flex-wrap:wrap">
-        <a href="lien-he.html" class="btn btn-primary">Đặt diagnostic ngành cà phê
+        <a href="lien-he.html" class="btn btn-primary" data-t="ind_cta_btn_diag">Đặt diagnostic ngành cà phê
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
         </a>
         <a href="#chain" class="btn btn-ghost" style="border-color:rgba(255,255,255,.2);color:#fff">Xem chuỗi giá trị</a>
       </div>
     </div>
     <div class="hero-side-card">
-      <h4>Số liệu ngành cà phê</h4>
-      <p style="color:rgba(255,255,255,.7);font-size:.92rem;line-height:1.55;margin-bottom:6px">Thống kê tổng hợp từ Tổng cục Hải quan, Hiệp hội ngành, MARD và đối tác hệ sinh thái 3S.</p>
-      <div class="factrow"><div><div class="k">Sản lượng VN</div><div class="v">1.8M tấn/năm</div></div><div><div class="k">Thị trường chính</div><div class="v">EU, US, Nhật</div></div><div><div class="k">EUDR effective</div><div class="v">12/2025</div></div><div><div class="k">Tỷ trọng robusta</div><div class="v">~95%</div></div></div>
+      <h4 data-t="ind_fact_title">Số liệu ngành cà phê</h4>
+      <p style="color:rgba(255,255,255,.7);font-size:.92rem;line-height:1.55;margin-bottom:6px" data-t="ind_fact_blurb">Thống kê tổng hợp từ Tổng cục Hải quan, Hiệp hội ngành, MARD và đối tác hệ sinh thái 3S.</p>
+      <div class="factrow"><div><div class="k">Sản lượng VN</div><div class="v" data-t="coffee_fact_prod_v">1.8M tấn/năm</div></div><div><div class="k">Thị trường chính</div><div class="v" data-t="coffee_fact_mkt_v">EU, US, Nhật</div></div><div><div class="k">EUDR effective</div><div class="v">12/2025</div></div><div><div class="k">Tỷ trọng robusta</div><div class="v">~95%</div></div></div>
     </div>
   </div>
 </section>
@@ -39,10 +39,15 @@
 <section class="section" id="chain">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow"><span class="dot"></span>Chuỗi giá trị</span>
-      <h2>4 mắt xích Cà phê mà 3S can thiệp.</h2>
+      <span class="eyebrow" data-t="ind_chain_eyebrow"><span class="dot"></span>Chuỗi giá trị</span>
+      <h2 data-t="coffee_chain_h2">4 mắt xích Cà phê mà 3S can thiệp.</h2>
     </div>
-    <div class="pillars reveal"><div class="pillar"><div class="num">01</div><h3>Vùng nguyên liệu</h3><p>Tây Nguyên: Đắk Lắk, Lâm Đồng, Gia Lai, Kon Tum, Đắk Nông. Số hoá hộ trồng — sẵn sàng EUDR.</p></div><div class="pillar"><div class="num">02</div><h3>Sơ chế</h3><p>Wet/dry/honey processing. Quản trị độ ẩm, lên men, phơi sấy. Lab cupping nội bộ.</p></div><div class="pillar"><div class="num">03</div><h3>Chế biến sâu</h3><p>Rang xay specialty, hoà tan, drip bag, RTD. Phát triển dòng thương hiệu cho buyers.</p></div><div class="pillar"><div class="num">04</div><h3>Logistics & XK</h3><p>Container 40ft, kho ngoại quan. LC, CAD, DP. Insurance hàng hoá XK toàn cầu.</p></div></div>
+    <div class="pillars reveal">
+      <div class="pillar"><div class="num">01</div><h3 data-t="coffee_node_1_h">Vùng nguyên liệu</h3><p data-t="coffee_node_1_p">Tây Nguyên: Đắk Lắk, Lâm Đồng, Gia Lai, Kon Tum, Đắk Nông. Số hoá hộ trồng — sẵn sàng EUDR.</p></div>
+      <div class="pillar"><div class="num">02</div><h3 data-t="coffee_node_2_h">Sơ chế</h3><p data-t="coffee_node_2_p">Wet/dry/honey processing. Quản trị độ ẩm, lên men, phơi sấy. Lab cupping nội bộ.</p></div>
+      <div class="pillar"><div class="num">03</div><h3 data-t="coffee_node_3_h">Chế biến sâu</h3><p data-t="coffee_node_3_p">Rang xay specialty, hoà tan, drip bag, RTD. Phát triển dòng thương hiệu cho buyers.</p></div>
+      <div class="pillar"><div class="num">04</div><h3 data-t="coffee_node_4_h">Logistics & XK</h3><p data-t="coffee_node_4_p">Container 40ft, kho ngoại quan. LC, CAD, DP. Insurance hàng hoá XK toàn cầu.</p></div>
+    </div>
   </div>
 </section>
 
@@ -50,8 +55,8 @@
 <section class="section alt-bg">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow"><span class="dot"></span>Thị trường xuất khẩu</span>
-      <h2>Đa dạng kênh khách hàng — <span class="ink-soft">không phụ thuộc một thị trường.</span></h2>
+      <span class="eyebrow" data-t="ind_mkt_eyebrow"><span class="dot"></span>Thị trường xuất khẩu</span>
+      <h2 data-t="coffee_mkt_h2">Đa dạng kênh khách hàng — <span class="ink-soft">không phụ thuộc một thị trường.</span></h2>
     </div>
     <div class="vsections reveal"><div class="vsec"><div class="vnum">01</div><div><h3>EU</h3><p class="vsub">Đức, Ý, Tây Ban Nha</p></div><ul><li>3S hỗ trợ kết nối buyers anchor</li><li>Hợp đồng dài hạn, hedging tỷ giá</li><li>Tuân thủ tiêu chuẩn nhập khẩu</li></ul></div><div class="vsec"><div class="vnum">02</div><div><h3>US specialty roasters</h3><p class="vsub">Thị trường XK chiến lược</p></div><ul><li>3S hỗ trợ kết nối buyers anchor</li><li>Hợp đồng dài hạn, hedging tỷ giá</li><li>Tuân thủ tiêu chuẩn nhập khẩu</li></ul></div><div class="vsec"><div class="vnum">03</div><div><h3>Nhật Bản</h3><p class="vsub">UCC, Key Coffee</p></div><ul><li>3S hỗ trợ kết nối buyers anchor</li><li>Hợp đồng dài hạn, hedging tỷ giá</li><li>Tuân thủ tiêu chuẩn nhập khẩu</li></ul></div><div class="vsec"><div class="vnum">04</div><div><h3>Hàn Quốc, Đài Loan</h3><p class="vsub">Thị trường XK chiến lược</p></div><ul><li>3S hỗ trợ kết nối buyers anchor</li><li>Hợp đồng dài hạn, hedging tỷ giá</li><li>Tuân thủ tiêu chuẩn nhập khẩu</li></ul></div><div class="vsec"><div class="vnum">05</div><div><h3>Trung Đông</h3><p class="vsub">Saudi, UAE</p></div><ul><li>3S hỗ trợ kết nối buyers anchor</li><li>Hợp đồng dài hạn, hedging tỷ giá</li><li>Tuân thủ tiêu chuẩn nhập khẩu</li></ul></div></div>
   </div>
@@ -61,10 +66,15 @@
 <section class="section">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow"><span class="dot"></span>Thách thức ngành</span>
-      <h2>4 vấn đề chính 3S thường gặp.</h2>
+      <span class="eyebrow" data-t="ind_challenge_eyebrow"><span class="dot"></span>Thách thức ngành</span>
+      <h2 data-t="coffee_challenge_h2">4 vấn đề chính 3S thường gặp.</h2>
     </div>
-    <div class="pillars reveal"><div class="pillar"><div class="num">!</div><h3>EUDR compliance trước 12/2025</h3><p>3S of CxO đề xuất giải pháp can thiệp dựa trên POM cụ thể.</p></div><div class="pillar"><div class="num">!</div><h3>Biến động giá ICE robusta</h3><p>3S of CxO đề xuất giải pháp can thiệp dựa trên POM cụ thể.</p></div><div class="pillar"><div class="num">!</div><h3>Cạnh tranh từ Brazil, Indonesia</h3><p>3S of CxO đề xuất giải pháp can thiệp dựa trên POM cụ thể.</p></div><div class="pillar"><div class="num">!</div><h3>Yêu cầu specialty tăng</h3><p>3S of CxO đề xuất giải pháp can thiệp dựa trên POM cụ thể.</p></div></div>
+    <div class="pillars reveal">
+      <div class="pillar"><div class="num">!</div><h3 data-t="coffee_chal_1_h">EUDR compliance trước 12/2025</h3><p data-t="coffee_chal_1_p">3S of CxO đề xuất giải pháp can thiệp dựa trên POM cụ thể.</p></div>
+      <div class="pillar"><div class="num">!</div><h3 data-t="coffee_chal_2_h">Biến động giá ICE robusta</h3><p data-t="coffee_chal_2_p">3S of CxO đề xuất giải pháp can thiệp dựa trên POM cụ thể.</p></div>
+      <div class="pillar"><div class="num">!</div><h3 data-t="coffee_chal_3_h">Cạnh tranh từ Brazil, Indonesia</h3><p data-t="coffee_chal_3_p">3S of CxO đề xuất giải pháp can thiệp dựa trên POM cụ thể.</p></div>
+      <div class="pillar"><div class="num">!</div><h3 data-t="coffee_chal_4_h">Yêu cầu specialty tăng</h3><p data-t="coffee_chal_4_p">3S of CxO đề xuất giải pháp can thiệp dựa trên POM cụ thể.</p></div>
+    </div>
   </div>
 </section>
 
@@ -85,13 +95,13 @@
   <div class="container">
     <div class="cta-inner">
       <span class="eyebrow"><span class="dot"></span>Cà phê</span>
-      <h2>Doanh nghiệp cà phê của bạn cần CxO nào?</h2>
-      <p>Đặt diagnostic 90 phút miễn phí — chúng tôi rà soát 5 chức năng và đề xuất 1–2 vai trò CxO ưu tiên cho 90 ngày tiếp theo.</p>
+      <h2 data-t="coffee_cta_h2">Doanh nghiệp cà phê của bạn cần CxO nào?</h2>
+      <p data-t="ind_cta_desc">Đặt diagnostic 90 phút miễn phí — chúng tôi rà soát 5 chức năng và đề xuất 1–2 vai trò CxO ưu tiên cho 90 ngày tiếp theo.</p>
       <div class="btns">
-        <a href="lien-he.html" class="btn btn-primary">Đặt lịch ngay
+        <a href="lien-he.html" class="btn btn-primary" data-t="ind_cta_btn_diag">Đặt lịch ngay
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
         </a>
-        <a href="cmo.html" class="btn btn-ghost">Xem 5 vai trò CxO</a>
+        <a href="cmo.html" class="btn btn-ghost" data-t="ind_cta_btn_roles">Xem 5 vai trò CxO</a>
       </div>
     </div>
   </div>

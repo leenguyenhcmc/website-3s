@@ -13,10 +13,10 @@
 
 <section class="page-hero">
   <div class="container page-hero-inner">
-    <div class="crumbs"><a href="index.html">Trang chủ</a><span class="sep">/</span><span class="here">Liên hệ</span></div>
+    <div class="crumbs"><a href="index.html" data-t="ind_home">Trang chủ</a><span class="sep">/</span><span class="here">Liên hệ</span></div>
     <span class="eyebrow" style="color:var(--accent);background:rgba(45,212,191,.12);padding:6px 14px;border-radius:99px;display:inline-flex;margin-bottom:24px">Get in touch</span>
-    <h1>Đặt diagnostic 90 phút — <span class="accent">miễn phí.</span></h1>
-    <p class="lede">Rà soát 5 chức năng CxO của doanh nghiệp. Đo gap so với best-practice ngành. Đề xuất POM ưu tiên cho 90 ngày tiếp theo. Phản hồi trong 24h làm việc.</p>
+    <h1 data-t="contact_h1">Liên hệ — <span class="accent">Bắt đầu hành trình Tăng trưởng.</span></h1>
+    <p class="lede" data-t="contact_lede">Hãy để lại thông tin, đội ngũ CxO của 3S sẽ liên hệ tư vấn giải pháp tối ưu nhất cho doanh nghiệp của bạn.</p>
   </div>
 </section>
 
@@ -63,31 +63,31 @@
       <!-- FORM SIDE -->
       <form class="contact-form" onsubmit="event.preventDefault();const b=this.querySelector('button[type=submit]');b.textContent='Đã gửi ✓ — phản hồi trong 24h';b.style.background='var(--accent)';b.style.color='var(--ink)'">
         <div class="contact-row">
-          <div class="contact-field"><label>Họ và tên *</label><input type="text" required placeholder="Nguyễn Văn A"/></div>
-          <div class="contact-field"><label>Email *</label><input type="email" required placeholder="ceo@congty.vn"/></div>
+          <div class="contact-field"><label data-t="form_name">Họ và tên *</label><input type="text" required data-t="form_name" placeholder="Nguyễn Văn A"/></div>
+          <div class="contact-field"><label data-t="form_email">Email *</label><input type="email" required placeholder="ceo@congty.vn"/></div>
         </div>
         <div class="contact-row">
-          <div class="contact-field"><label>Tên doanh nghiệp *</label><input type="text" required placeholder="Công ty CP Nông sản XYZ"/></div>
-          <div class="contact-field"><label>Vai trò</label>
-            <select><option>Chủ sở hữu / CEO</option><option>F2 kế thừa</option><option>Giám đốc Tài chính</option><option>Giám đốc Kinh doanh / XK</option><option>Khác</option></select>
+          <div class="contact-field"><label data-t="form_company">Tên doanh nghiệp *</label><input type="text" required placeholder="Công ty CP Nông sản XYZ"/></div>
+          <div class="contact-field"><label data-t="form_role">Vai trò</label>
+            <select><option data-t="form_role">Chủ sở hữu / CEO</option><option>F2 kế thừa</option><option>Giám đốc Tài chính</option><option>Giám đốc Kinh doanh / XK</option><option>Khác</option></select>
           </div>
         </div>
         <div class="contact-row">
-          <div class="contact-field"><label>Ngành hàng</label>
-            <select><option>Cà phê</option><option>Hạt điều</option><option>Hồ tiêu / Quế hồi</option><option>Sầu riêng / Trái cây</option><option>Gạo / Lúa nước</option><option>Thuỷ sản</option><option>Mì lát</option><option>Khác</option></select>
+          <div class="contact-field"><label data-t="form_ind">Ngành hàng</label>
+            <select><option data-t="form_ind">Cà phê</option><option>Hạt điều</option><option>Hồ tiêu / Quế hồi</option><option>Sầu riêng / Trái cây</option><option>Gạo / Lúa nước</option><option>Thuỷ sản</option><option>Mì lát</option><option>Khác</option></select>
           </div>
-          <div class="contact-field"><label>Quy mô doanh thu</label>
-            <select><option>&lt; 50 tỷ</option><option>50–200 tỷ</option><option>200–500 tỷ</option><option>500–2.000 tỷ</option><option>&gt; 2.000 tỷ</option></select>
+          <div class="contact-field"><label data-t="form_revenue">Quy mô doanh thu</label>
+            <select><option data-t="form_revenue">&lt; 50 tỷ</option><option>50–200 tỷ</option><option>200–500 tỷ</option><option>500–2.000 tỷ</option><option>&gt; 2.000 tỷ</option></select>
           </div>
         </div>
-        <div class="contact-field"><label>CxO bạn quan tâm</label>
+        <div class="contact-field"><label data-t="form_cxo">CxO bạn quan tâm</label>
           <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:4px">
             <label style="display:inline-flex;gap:6px;align-items:center;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);padding:7px 14px;border-radius:99px;cursor:pointer;font-size:.85rem;color:rgba(255,255,255,.85)"><input type="checkbox"/> CMO</label><label style="display:inline-flex;gap:6px;align-items:center;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);padding:7px 14px;border-radius:99px;cursor:pointer;font-size:.85rem;color:rgba(255,255,255,.85)"><input type="checkbox"/> CPO</label><label style="display:inline-flex;gap:6px;align-items:center;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);padding:7px 14px;border-radius:99px;cursor:pointer;font-size:.85rem;color:rgba(255,255,255,.85)"><input type="checkbox"/> CFO</label><label style="display:inline-flex;gap:6px;align-items:center;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);padding:7px 14px;border-radius:99px;cursor:pointer;font-size:.85rem;color:rgba(255,255,255,.85)"><input type="checkbox"/> CTO</label><label style="display:inline-flex;gap:6px;align-items:center;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);padding:7px 14px;border-radius:99px;cursor:pointer;font-size:.85rem;color:rgba(255,255,255,.85)"><input type="checkbox"/> CDO</label>
           </div>
         </div>
-        <div class="contact-field"><label>Mô tả ngắn nhu cầu</label><textarea placeholder="VD: Chúng tôi đang cần chuẩn bị EUDR cho lô cà phê XK sang Đức..."></textarea></div>
-        <button type="submit" class="btn btn-primary" style="justify-content:center;padding:1rem;font-size:1rem">Gửi yêu cầu diagnostic <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></button>
-        <p style="text-align:center;font-size:.8rem;color:rgba(255,255,255,.45);margin-top:4px">Thông tin của bạn được bảo mật — chỉ dùng để tư vấn.</p>
+        <div class="contact-field"><label data-t="form_msg">Mô tả ngắn nhu cầu</label><textarea data-t="form_msg_ph" placeholder="VD: Chúng tôi đang cần chuẩn bị EUDR cho lô cà phê XK sang Đức..."></textarea></div>
+        <button type="submit" class="btn btn-primary" style="justify-content:center;padding:1rem;font-size:1rem" data-t="form_submit">Gửi yêu cầu diagnostic <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></button>
+        <p style="text-align:center;font-size:.8rem;color:rgba(255,255,255,.45);margin-top:4px" data-t="form_note">Thông tin của bạn được bảo mật — chỉ dùng để tư vấn.</p>
       </form>
     </div>
   </div>

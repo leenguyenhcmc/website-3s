@@ -361,7 +361,7 @@ section.section, .section{padding:96px 0}
 .page-hero .lede{font-size:1.1rem;line-height:1.6;color:rgba(255,255,255,.78);max-width:720px}
 
 /* page-hero with side panel (industry / role) */
-.page-hero.with-side .page-hero-inner{display:grid;grid-template-columns:1.4fr 1fr;gap:64px;align-items:center;max-width:none}
+.page-hero.with-side .page-hero-inner{display:grid;grid-template-columns:1.4fr 1fr;gap:64px;align-items:center;max-width:1140px}
 @media (max-width:900px){.page-hero.with-side .page-hero-inner{grid-template-columns:1fr;gap:32px}}
 .hero-side-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);border-radius:var(--r-xl);padding:28px;backdrop-filter:blur(8px)}
 .hero-side-card h4{color:#fff;font-size:1.05rem;margin-bottom:14px}
