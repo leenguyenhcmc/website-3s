@@ -289,6 +289,185 @@
       role_sol: 'Giải pháp',
       role_cta_h2: 'Doanh nghiệp của bạn cần vai trò này?',
       role_cta_btn: 'Đặt diagnostic 90 phút',
+      // Process Section
+      proc_eyebrow: 'Lộ trình chuyên nghiệp',
+      proc_title: 'Quy trình thực hiện dịch vụ 3S',
+      proc_g1: 'Tiếp nhận',
+      proc_g2: 'Thực hiện',
+      proc_g3: 'Hoàn thành & Bàn giao',
+      proc_s1_h: '01. Tiếp nhận yêu cầu',
+      proc_s1_p: 'Ghi nhận thông tin sơ bộ về nhu cầu doanh nghiệp.',
+      proc_s2_h: '02. Xem xét & Xác nhận',
+      proc_s2_p: 'Đánh giá tính khả thi và xác nhận phạm vi công việc.',
+      proc_s3_h: '03. Đánh giá sơ bộ',
+      proc_s3_p: 'Phân loại và đưa ra nhận định ban đầu về dự án.',
+      proc_s4_h: '04. Gửi báo giá',
+      proc_s4_p: 'Đề xuất phương án tài chính và lộ trình cụ thể.',
+      proc_s5_h: '05. Kick-off dự án',
+      proc_s5_p: 'Họp khởi động để thống nhất mục tiêu và nhân sự.',
+      proc_s6_h: '06. Ký NDA & Hợp đồng',
+      proc_s6_p: 'Bảo mật thông tin và xác lập pháp lý dịch vụ.',
+      proc_s7_h: '07. Thu thập dữ liệu',
+      proc_s7_p: 'Khảo sát và thu thập dữ liệu chuyên sâu tại doanh nghiệp.',
+      proc_s8_h: '08. Triển khai',
+      proc_s8_p: 'Thực hiện các giải pháp CxO theo lộ trình đã cam kết.',
+      proc_s9_h: '09. Nghiệm thu',
+      proc_s9_p: 'Kiểm tra kết quả và đối chiếu với KPI đề ra.',
+      proc_s10_h: '10. Bàn giao',
+      proc_s10_p: 'Bàn giao kết quả và hướng dẫn vận hành bền vững.',
+      // Combo Section Headers
+      combo_eyebrow: 'Giải pháp chuyên biệt',
+      combo_h2: 'Combo dịch vụ theo từng vai trò CxO.',
+      combo_sol_label: 'Gói',
+      combo_desc_label: 'Giải pháp cụ thể',
+      // Cashew Combo
+      cashew_cmo_combo: `
+        <div class="combo-item"><span class="combo-code">E.1.1 — Target Market</span><div class="combo-text">Phân tích thị trường điều nhân theo phân khúc (WW240, WW320...), xác định thị trường trọng điểm.</div></div>
+        <div class="combo-item"><span class="combo-code">E.1.2 — Buyer Conn.</span><div class="combo-text">Kết nối trực tiếp với trader/roaster/snack manufacturer tại Mỹ, EU, TQ, Ấn Độ.</div></div>
+        <div class="combo-item"><span class="combo-code">E.2.1 — Documents</span><div class="combo-text">Chuẩn hoá hồ sơ XK (C/O, Phyto, Health Certificate, chứng nhận FSSC/BRC).</div></div>
+        <div class="combo-item"><span class="combo-code">E.3.1 — Order Mgmt</span><div class="combo-text">Quản trị đơn hàng XK khối lượng lớn, nhiều shipment liên tục.</div></div>
+        <div class="combo-item"><span class="combo-code">E.3.3 — Relationship</span><div class="combo-text">Quản lý KH dài hạn (contract buyer), duy trì mối quan hệ với trader quốc tế.</div></div>
+      `,
+      cashew_cpo_combo: `
+        <div class="combo-item"><span class="combo-code">P.1 — QMS Setup</span><div class="combo-text">Thiết lập FSSC 22000, BRC, SMETA/Sedex cho nhà máy chế biến điều.</div></div>
+        <div class="combo-item"><span class="combo-code">P.2 — Market Access</span><div class="combo-text">Đăng ký FDA (Mỹ), đáp ứng EU Novel Food regulation, GACC (TQ).</div></div>
+        <div class="combo-item"><span class="combo-code">P.3 — Supplier Audit</span><div class="combo-text">Đánh giá NCC nguyên liệu thô (điều thô NK), kiểm tra năng lực chế biến NCC gia công.</div></div>
+        <div class="combo-item"><span class="combo-code">P.4 — Traceability</span><div class="combo-text">Truy xuất từ vùng trồng (Bình Phước, Đồng Nai, Châu Phi) → nhà máy → container XK.</div></div>
+      `,
+      cashew_cfo_combo: `
+        <div class="combo-item"><span class="combo-code">E.1.1 — Fundraising</span><div class="combo-text">Huy động vốn thu mua nguyên liệu mùa vụ (lượng vốn lớn, xoay nhanh), tiếp cận trade finance/LC.</div></div>
+        <div class="combo-item"><span class="combo-code">E.1.3 — Cash Flow</span><div class="combo-text">Quản trị dòng tiền theo chu kỳ thu mua — chế biến — XK (thường 3-6 tháng), tối ưu vốn lưu động.</div></div>
+        <div class="combo-item"><span class="combo-code">E.2.2 — Reporting</span><div class="combo-text">Báo cáo P&L theo từng grade, phân tích margin theo thị trường, theo mùa vụ.</div></div>
+        <div class="combo-item"><span class="combo-code">E.2.3 — Risk Mgmt</span><div class="combo-text">Quản trị rủi ro biến động giá nguyên liệu (hedging advisory), rủi ro tỷ giá.</div></div>
+      `,
+      cashew_cto_combo: `
+        <div class="combo-item"><span class="combo-code">E.1 — Order Mgmt</span><div class="combo-text">Quản lý đơn hàng XK theo grade/spec/shipment, theo dõi tiến độ giao hàng.</div></div>
+        <div class="combo-item"><span class="combo-code">E.2 — Traceability</span><div class="combo-text">Truy xuất nguyên liệu NK → chế biến → XK (đáp ứng EUDR).</div></div>
+        <div class="combo-item"><span class="combo-code">E.3 — ERP</span><div class="combo-text">Quản lý kho nguyên liệu thô, bán thành phẩm, thành phẩm theo grade; quản lý mua hàng NK.</div></div>
+      `,
+      cashew_cdo_combo: `
+        <div class="combo-item"><span class="combo-code">D.2 — Internship</span><div class="combo-text">Thực tập tại nhà máy chế biến điều, học vận hành QC/QA.</div></div>
+        <div class="combo-item"><span class="combo-code">D.3 — Graduate</span><div class="combo-text">Chương trình phát triển cán bộ quản lý nhà máy điều thế hệ mới.</div></div>
+        <div class="combo-item"><span class="combo-code">D.4 — Global</span><div class="combo-text">Kết nối học hỏi mô hình chế biến tiên tiến tại Ấn Độ, Brazil.</div></div>
+      `,
+      // Coffee Combo
+      coffee_cmo_combo: `
+        <div class="combo-item"><span class="combo-code">E.1.1 — Market Strategy</span><div class="combo-text">Xác định phân khúc Specialty vs Commodity cho thị trường EU/US/Nhật.</div></div>
+        <div class="combo-item"><span class="combo-code">E.2.2 — Buyer Outreach</span><div class="combo-text">Kết nối Roasters và Coffee Houses quốc tế. Xây dựng Brand Story vùng miền.</div></div>
+        <div class="combo-item"><span class="combo-code">E.3.1 — Certification</span><div class="combo-text">Triển khai Rainforest Alliance, 4C, Organic (USDA/EU) cho vùng trồng.</div></div>
+      `,
+      coffee_cpo_combo: `
+        <div class="combo-item"><span class="combo-code">P.1 — QC Standards</span><div class="combo-text">Thiết lập Lab Cupping, chuẩn hoá quy trình sơ chế ướt/khô/honey.</div></div>
+        <div class="combo-item"><span class="combo-code">P.2 — Processing</span><div class="combo-text">Tối ưu hoá quy trình rang xay, bảo quản green beans đạt chuẩn độ ẩm XK.</div></div>
+      `,
+      coffee_cfo_combo: `
+        <div class="combo-item"><span class="combo-code">F.1 — ICE Hedging</span><div class="combo-text">Advisory về phòng ngừa rủi ro giá cà phê theo sàn London (Robusta) và New York (Arabica).</div></div>
+        <div class="combo-item"><span class="combo-code">F.2 — Trade Finance</span><div class="combo-text">Thu xếp vốn lưu động cho mùa vụ thu mua tập trung tháng 10-01.</div></div>
+      `,
+      coffee_cto_combo: `
+        <div class="combo-item"><span class="combo-code">T.1 — EUDR Ready</span><div class="combo-text">Số hoá bản đồ vùng trồng, quản lý tọa độ GPS đáp ứng quy định chống phá rừng của EU.</div></div>
+        <div class="combo-item"><span class="combo-code">T.2 — Farm Mgmt</span><div class="combo-text">Hệ thống quản lý hộ nông dân và nhật ký canh tác số.</div></div>
+      `,
+      coffee_cdo_combo: `
+        <div class="combo-item"><span class="combo-code">D.1 — Q-Grader Path</span><div class="combo-text">Đào tạo đội ngũ nếm thử chất lượng chuẩn quốc tế (Q-Grader).</div></div>
+        <div class="combo-item"><span class="combo-code">D.2 — Leadership</span><div class="combo-text">Phát triển thế hệ kế thừa am hiểu cả nông nghiệp và thương mại quốc tế.</div></div>
+      `,
+      // Spices Combo
+      spices_cmo_combo: `
+        <div class="combo-item"><span class="combo-code">E.1 — ASTA Standard</span><div class="combo-text">Xây dựng hồ sơ sản phẩm tiêu đạt chuẩn ASTA, ESA cho thị trường Mỹ, EU.</div></div>
+        <div class="combo-item"><span class="combo-code">E.2 — B2B Network</span><div class="combo-text">Kết nối các nhà sản xuất gia vị, thực phẩm hàng đầu (McCormick, Olam).</div></div>
+      `,
+      spices_cpo_combo: `
+        <div class="combo-item"><span class="combo-code">P.1 — Steam Sterile</span><div class="combo-text">Chuẩn hoá quy trình tiệt trùng hơi nước (Steam Sterilization) cho hồ tiêu XK.</div></div>
+        <div class="combo-item"><span class="combo-code">P.2 — Pesticide Control</span><div class="combo-text">Quản lý dư lượng thuốc BVTV (MRL) theo danh mục 500+ hoạt chất của EU.</div></div>
+      `,
+      spices_cfo_combo: `
+        <div class="combo-item"><span class="combo-code">F.1 — Price Hedging</span><div class="combo-text">Quản trị rủi ro biến động giá hồ tiêu nội địa và quốc tế.</div></div>
+      `,
+      spices_cto_combo: `
+        <div class="combo-item"><span class="combo-code">T.1 — Origin Trace</span><div class="combo-text">Truy xuất nguồn gốc đến từng hộ trồng hồ tiêu hữu cơ.</div></div>
+      `,
+      spices_cdo_combo: `
+        <div class="combo-item"><span class="combo-code">D.1 — Tech Farm</span><div class="combo-text">Đào tạo quản lý nông trại công nghệ cao cho đội ngũ kế cận.</div></div>
+      `,
+      // Seafood Combo
+      seafood_cmo_combo: `
+        <div class="combo-item"><span class="combo-code">E.1 — Retail Entry</span><div class="combo-text">Đưa hàng vào chuỗi siêu thị Walmart, Costco, AEON. Chuẩn hoá bao gói retail.</div></div>
+        <div class="combo-item"><span class="combo-code">E.2 — Market Access</span><div class="combo-text">Hỗ trợ hồ sơ tháo gỡ thẻ vàng IUU, chống bán phá giá (anti-dumping).</div></div>
+      `,
+      seafood_cpo_combo: `
+        <div class="combo-item"><span class="combo-code">P.1 — Certifications</span><div class="combo-text">Triển khai ASC, BAP, GlobalGAP cho vùng nuôi và BRC, IFS cho nhà máy.</div></div>
+        <div class="combo-item"><span class="combo-code">P.2 — Cold Chain</span><div class="combo-text">Tối ưu hoá quy trình cấp đông IQF và quản trị chuỗi cung ứng lạnh -18°C.</div></div>
+      `,
+      seafood_cfo_combo: `
+        <div class="combo-item"><span class="combo-code">F.1 — ESG Capital</span><div class="combo-text">Tiếp cận nguồn vốn xanh, vốn ưu đãi cho dự án nuôi trồng bền vững.</div></div>
+      `,
+      seafood_cto_combo: `
+        <div class="combo-item"><span class="combo-code">T.1 — IoT Farming</span><div class="combo-text">Hệ thống giám sát môi trường nước và quản lý thức ăn tự động cho ao nuôi.</div></div>
+      `,
+      seafood_cdo_combo: `
+        <div class="combo-item"><span class="combo-code">D.1 — Aqua Experts</span><div class="combo-text">Đào tạo chuyên gia kỹ thuật nuôi trồng và quản trị nhà máy hiện đại.</div></div>
+      `,
+      // Rice Combo
+      rice_cmo_combo: `
+        <div class="combo-item"><span class="combo-code">E.1 — Brand Export</span><div class="combo-text">Xây dựng thương hiệu gạo đóng túi (1kg, 2kg, 5kg) cho thị trường retail cao cấp.</div></div>
+        <div class="combo-item"><span class="combo-code">E.2 — G2G & B2B</span><div class="combo-text">Hỗ trợ hồ sơ thầu quốc tế, kết nối đầu mối thu mua lương thực quốc gia.</div></div>
+      `,
+      rice_cpo_combo: `
+        <div class="combo-item"><span class="combo-code">P.1 — Milling Opt.</span><div class="combo-text">Tối ưu quy trình xay xát, đánh bóng, tách màu để giảm tỷ lệ tấm và tăng thu hồi.</div></div>
+        <div class="combo-item"><span class="combo-code">P.2 — Quality Standard</span><div class="combo-text">Thiết lập tiêu chuẩn kiểm soát dư lượng thuốc BVTV, chuẩn hoá độ ẩm XK.</div></div>
+      `,
+      rice_cfo_combo: `
+        <div class="combo-item"><span class="combo-code">F.1 — Inventory Fund</span><div class="combo-text">Huy động vốn lưu động cho dự án bao tiêu lúa cánh đồng lớn.</div></div>
+      `,
+      rice_cto_combo: `
+        <div class="combo-item"><span class="combo-code">T.1 — Paddy Trace</span><div class="combo-text">Hệ thống truy xuất nguồn gốc từ hộ nông dân/HTX đến nhà máy.</div></div>
+      `,
+      rice_cdo_combo: `
+        <div class="combo-item"><span class="combo-code">D.1 — Agri Manager</span><div class="combo-text">Đào tạo đội ngũ quản lý chuỗi liên kết lúa gạo bền vững.</div></div>
+      `,
+      // Passion Combo
+      passion_cmo_combo: `
+        <div class="combo-item"><span class="combo-code">E.1 — Juice Network</span><div class="combo-text">Kết nối các nhà máy beverage, concentrate juice quốc tế.</div></div>
+      `,
+      passion_cpo_combo: `
+        <div class="combo-item"><span class="combo-code">P.1 — IQF/Puree</span><div class="combo-text">Thiết lập quy trình cấp đông IQF và sản xuất puree chanh dây đạt Brix chuẩn.</div></div>
+      `,
+      // Durian Combo
+      durian_cmo_combo: `
+        <div class="combo-item"><span class="combo-code">E.1 — China Channel</span><div class="combo-text">Thiết lập kênh phân phối chính ngạch sang Trung Quốc, kết nối chợ đầu mối & retail.</div></div>
+        <div class="combo-item"><span class="combo-code">E.2 — Global IQF</span><div class="combo-text">Mở rộng thị trường sầu riêng cấp đông sang Hàn Quốc, Nhật Bản, Mỹ.</div></div>
+      `,
+      durian_cpo_combo: `
+        <div class="combo-item"><span class="combo-code">P.1 — Packing House</span><div class="combo-text">Chuẩn hoá nhà đóng gói theo quy định GACC, quản lý mã số vùng trồng.</div></div>
+      `,
+      // Cassava Combo
+      cassava_cmo_combo: `
+        <div class="combo-item"><span class="combo-code">E.1 — Industrial Link</span><div class="combo-text">Kết nối chuỗi cung ứng nguyên liệu cho nhà máy ethanol và thực phẩm TQ/VN.</div></div>
+      `,
+      cassava_cpo_combo: `
+        <div class="combo-item"><span class="combo-code">P.1 — Starch Opt.</span><div class="combo-text">Cải tiến quy trình tách tinh bột và sấy mì lát đạt chuẩn độ ẩm XK.</div></div>
+      `,
+      // Fallbacks
+      gen_cfo_combo: `
+        <div class="combo-item"><span class="combo-code">F.1 — Working Capital</span><div class="combo-text">Tối ưu hoá dòng tiền và thu xếp vốn lưu động cho các dự án thu mua mùa vụ.</div></div>
+        <div class="combo-item"><span class="combo-code">F.2 — Risk Mgmt</span><div class="combo-text">Quản trị rủi ro tỷ giá và biến động giá nông sản trên thị trường quốc tế.</div></div>
+      `,
+      gen_cto_combo: `
+        <div class="combo-item"><span class="combo-code">T.1 — ERP/MES</span><div class="combo-text">Hệ thống quản trị sản xuất và kho bãi chuyên biệt cho ngành nông nghiệp.</div></div>
+        <div class="combo-item"><span class="combo-code">T.2 — Traceability</span><div class="combo-text">Giải pháp truy xuất nguồn gốc đáp ứng tiêu chuẩn khắt khe của EU, Mỹ.</div></div>
+      `,
+      gen_cdo_combo: `
+        <div class="combo-item"><span class="combo-code">D.1 — Succession</span><div class="combo-text">Xây dựng lộ trình kế thừa và đào tạo đội ngũ quản lý nòng cốt cho doanh nghiệp gia đình.</div></div>
+      `,
+      // Insights Page
+      ins_h1: 'Insights — <span class="accent">Tri thức & Hành động.</span>',
+      ins_lede: 'Dữ liệu thị trường, góc nhìn chuyên môn và những bài học thực chiến từ các dự án 3S đã triển khai.',
+      ins_filter_all: 'Tất cả',
+      ins_featured: 'Bài viết nổi bật',
+      ins_aside_topics: 'Chủ đề',
+      ins_aside_diag: 'Diagnostic miễn phí',
+      ins_aside_news: 'Newsletter',
     },
     en: {
       solutions: 'Solutions',
@@ -574,6 +753,160 @@
       role_sol: 'Solutions',
       role_cta_h2: 'Does your business need this role?',
       role_cta_btn: 'Book 90-min Diagnostic',
+      // Process Section
+      proc_eyebrow: 'Professional Roadmap',
+      proc_title: '3S Service Implementation Process',
+      proc_g1: 'Intake',
+      proc_g2: 'Execution',
+      proc_g3: 'Completion & Handover',
+      proc_s1_h: '01. Request Intake',
+      proc_s1_p: 'Record initial information about business needs.',
+      proc_s2_h: '02. Review & Confirm',
+      proc_s2_p: 'Assess feasibility and confirm scope of work.',
+      proc_s3_h: '03. Initial Assessment',
+      proc_s3_p: 'Classify and provide initial project insights.',
+      proc_s4_h: '04. Quotation',
+      proc_s4_p: 'Propose financial plan and specific roadmap.',
+      proc_s5_h: '05. Project Kick-off',
+      proc_s5_p: 'Kick-off meeting to align on goals and personnel.',
+      proc_s6_h: '06. NDA & Contract',
+      proc_s6_p: 'Information security and legal establishment.',
+      proc_s7_h: '07. Data Collection',
+      proc_s7_p: 'In-depth survey and data gathering at the enterprise.',
+      proc_s8_h: '08. Implementation',
+      proc_s8_p: 'Execute CxO solutions according to the roadmap.',
+      proc_s9_h: '09. Acceptance',
+      proc_s9_p: 'Verify results against defined KPIs.',
+      proc_s10_h: '10. Handover',
+      proc_s10_p: 'Handover results and sustainable operations guide.',
+      // Combo Section Headers
+      combo_eyebrow: 'Specialized Solutions',
+      combo_h2: 'Service combos by CxO roles.',
+      combo_sol_label: 'Package',
+      combo_desc_label: 'Specific Solutions',
+      // Cashew Combo
+      cashew_cmo_combo: `
+        <div class="combo-item"><span class="combo-code">E.1.1 — Target Market</span><div class="combo-text">Cashew kernel market analysis by segment (WW240, WW320...), identifying key markets.</div></div>
+        <div class="combo-item"><span class="combo-code">E.1.2 — Buyer Conn.</span><div class="combo-text">Direct connection with traders/roasters/snack manufacturers in US, EU, China, India.</div></div>
+        <div class="combo-item"><span class="combo-code">E.2.1 — Documents</span><div class="combo-text">Standardizing export documents (C/O, Phyto, Health Cert, FSSC/BRC certifications).</div></div>
+        <div class="combo-item"><span class="combo-code">E.3.1 — Order Mgmt</span><div class="combo-text">Managing high-volume export orders, multiple continuous shipments.</div></div>
+        <div class="combo-item"><span class="combo-code">E.3.3 — Relationship</span><div class="combo-text">Long-term customer management (contract buyer), maintaining international trader relations.</div></div>
+      `,
+      cashew_cpo_combo: `
+        <div class="combo-item"><span class="combo-code">P.1 — QMS Setup</span><div class="combo-text">Setting up FSSC 22000, BRC, SMETA/Sedex for cashew processing factories.</div></div>
+        <div class="combo-item"><span class="combo-code">P.2 — Market Access</span><div class="combo-text">FDA registration (US), complying with EU Novel Food regulation, GACC (China).</div></div>
+        <div class="combo-item"><span class="combo-code">P.3 — Supplier Audit</span><div class="combo-text">Raw material supplier audit (imported RCN), processing capacity check for sub-contractors.</div></div>
+        <div class="combo-item"><span class="combo-code">P.4 — Traceability</span><div class="combo-text">Traceability from farm (Binh Phuoc, Dong Nai, Africa) → factory → export container.</div></div>
+      `,
+      cashew_cfo_combo: `
+        <div class="combo-item"><span class="combo-code">E.1.1 — Fundraising</span><div class="combo-text">Raising capital for seasonal raw material purchase, accessing trade finance/LC.</div></div>
+        <div class="combo-item"><span class="combo-code">E.1.3 — Cash Flow</span><div class="combo-text">Managing cash flow by purchase-processing-export cycle, optimizing working capital.</div></div>
+        <div class="combo-item"><span class="combo-code">E.2.2 — Reporting</span><div class="combo-text">P&L reporting by grade, margin analysis by market and season.</div></div>
+        <div class="combo-item"><span class="combo-code">E.2.3 — Risk Mgmt</span><div class="combo-text">Managing raw material price volatility risk (hedging advisory), exchange rate risk.</div></div>
+      `,
+      cashew_cto_combo: `
+        <div class="combo-item"><span class="combo-code">E.1 — Order Mgmt</span><div class="combo-text">Managing export orders by grade/spec/shipment, tracking delivery progress.</div></div>
+        <div class="combo-item"><span class="combo-code">E.2 — Traceability</span><div class="combo-text">Imported raw material traceability → processing → export (EUDR compliant).</div></div>
+        <div class="combo-item"><span class="combo-code">E.3 — ERP</span><div class="combo-text">Managing RCN, semi-finished, finished goods inventory by grade; import purchase management.</div></div>
+      `,
+      cashew_cdo_combo: `
+        <div class="combo-item"><span class="combo-code">D.2 — Internship</span><div class="combo-text">Internship at cashew processing factories, learning QC/QA operations.</div></div>
+        <div class="combo-item"><span class="combo-code">D.3 — Graduate</span><div class="combo-text">Management trainee program for the next generation of cashew factory managers.</div></div>
+        <div class="combo-item"><span class="combo-code">D.4 — Global</span><div class="combo-text">Connecting to learn advanced processing models in India, Brazil.</div></div>
+      `,
+      // Coffee Combo
+      coffee_cmo_combo: `
+        <div class="combo-item"><span class="combo-code">E.1.1 — Market Strategy</span><div class="combo-text">Defining Specialty vs Commodity segments for EU/US/Japan markets.</div></div>
+        <div class="combo-item"><span class="combo-code">E.2.2 — Buyer Outreach</span><div class="combo-text">Connecting with international Roasters and Coffee Houses. Building Regional Brand Stories.</div></div>
+        <div class="combo-item"><span class="combo-code">E.3.1 — Certification</span><div class="combo-text">Implementing Rainforest Alliance, 4C, Organic (USDA/EU) for growing areas.</div></div>
+      `,
+      coffee_cpo_combo: `
+        <div class="combo-item"><span class="combo-code">P.1 — QC Standards</span><div class="combo-text">Setting up Cupping Labs, standardizing wet/dry/honey pre-processing.</div></div>
+        <div class="combo-item"><span class="combo-code">P.2 — Processing</span><div class="combo-text">Optimizing roasting processes, preserving green beans to export moisture standards.</div></div>
+      `,
+      coffee_cfo_combo: `
+        <div class="combo-item"><span class="combo-code">F.1 — ICE Hedging</span><div class="combo-text">Advisory on coffee price risk hedging on London (Robusta) and New York (Arabica) exchanges.</div></div>
+        <div class="combo-item"><span class="combo-code">F.2 — Trade Finance</span><div class="combo-text">Arranging working capital for seasonal centralized procurement (Oct-Jan).</div></div>
+      `,
+      coffee_cto_combo: `
+        <div class="combo-item"><span class="combo-code">T.1 — EUDR Ready</span><div class="combo-text">Digitalizing farm maps, managing GPS coordinates to meet EU deforestation regulations.</div></div>
+        <div class="combo-item"><span class="combo-code">T.2 — Farm Mgmt</span><div class="combo-text">Digital system for farmer management and cultivation logs.</div></div>
+      `,
+      coffee_cdo_combo: `
+        <div class="combo-item"><span class="combo-code">D.1 — Q-Grader Path</span><div class="combo-text">Training international standard cupping quality team (Q-Grader).</div></div>
+      `,
+      // Spices Combo
+      spices_cmo_combo: `
+        <div class="combo-item"><span class="combo-code">E.1 — ASTA Standard</span><div class="combo-text">Building product profiles meeting ASTA, ESA standards for US/EU markets.</div></div>
+      `,
+      spices_cpo_combo: `
+        <div class="combo-item"><span class="combo-code">P.1 — Steam Sterile</span><div class="combo-text">Standardizing Steam Sterilization processes for export pepper.</div></div>
+      `,
+      // Seafood Combo
+      seafood_cmo_combo: `
+        <div class="combo-item"><span class="combo-code">E.1 — Retail Entry</span><div class="combo-text">Entering Walmart, Costco, AEON chains. Standardizing retail packaging.</div></div>
+      `,
+      seafood_cdo_combo: `
+        <div class="combo-item"><span class="combo-code">D.1 — Aqua Experts</span><div class="combo-text">Training modern aquaculture technical experts and factory management.</div></div>
+      `,
+      // Rice Combo
+      rice_cmo_combo: `
+        <div class="combo-item"><span class="combo-code">E.1 — Brand Export</span><div class="combo-text">Building branded bagged rice (1kg, 2kg, 5kg) for high-end retail markets.</div></div>
+        <div class="combo-item"><span class="combo-code">E.2 — G2G & B2B</span><div class="combo-text">Support for international tender documents, connecting with national food procurement agencies.</div></div>
+      `,
+      rice_cpo_combo: `
+        <div class="combo-item"><span class="combo-code">P.1 — Milling Opt.</span><div class="combo-text">Optimizing milling, polishing, and color sorting to reduce broken rates and increase recovery.</div></div>
+      `,
+      rice_cfo_combo: `
+        <div class="combo-item"><span class="combo-code">F.1 — Inventory Fund</span><div class="combo-text">Raising working capital for large-scale field rice offtake projects.</div></div>
+      `,
+      rice_cto_combo: `
+        <div class="combo-item"><span class="combo-code">T.1 — Paddy Trace</span><div class="combo-text">Traceability system from farmers/cooperatives to factory.</div></div>
+      `,
+      rice_cdo_combo: `
+        <div class="combo-item"><span class="combo-code">D.1 — Agri Manager</span><div class="combo-text">Training managers for sustainable rice linkage chains.</div></div>
+      `,
+      // Passion Combo
+      passion_cmo_combo: `
+        <div class="combo-item"><span class="combo-code">E.1 — Juice Network</span><div class="combo-text">Connecting with international beverage and concentrate juice factories.</div></div>
+      `,
+      passion_cpo_combo: `
+        <div class="combo-item"><span class="combo-code">P.1 — IQF/Puree</span><div class="combo-text">Setting up IQF freezing and passion fruit puree production to Brix standards.</div></div>
+      `,
+      // Durian Combo
+      durian_cmo_combo: `
+        <div class="combo-item"><span class="combo-code">E.1 — China Channel</span><div class="combo-text">Setting up official distribution channels to China, connecting wholesale markets & retail.</div></div>
+      `,
+      durian_cpo_combo: `
+        <div class="combo-item"><span class="combo-code">P.1 — Packing House</span><div class="combo-text">Standardizing packing houses according to GACC regulations, managing planting area codes.</div></div>
+      `,
+      // Cassava Combo
+      cassava_cmo_combo: `
+        <div class="combo-item"><span class="combo-code">E.1 — Industrial Link</span><div class="combo-text">Connecting raw material supply chains for ethanol and food factories in China/Vietnam.</div></div>
+      `,
+      cassava_cpo_combo: `
+        <div class="combo-item"><span class="combo-code">P.1 — Starch Opt.</span><div class="combo-text">Improving starch separation and cassava chip drying to export moisture standards.</div></div>
+      `,
+      // Fallbacks
+      gen_cfo_combo: `
+        <div class="combo-item"><span class="combo-code">F.1 — Working Capital</span><div class="combo-text">Optimizing cash flow and arranging working capital for seasonal procurement projects.</div></div>
+        <div class="combo-item"><span class="combo-code">F.2 — Risk Mgmt</span><div class="combo-text">Managing exchange rate risks and agricultural price volatility in international markets.</div></div>
+      `,
+      gen_cto_combo: `
+        <div class="combo-item"><span class="combo-code">T.1 — ERP/MES</span><div class="combo-text">Production and warehouse management systems specialized for the agricultural sector.</div></div>
+        <div class="combo-item"><span class="combo-code">T.2 — Traceability</span><div class="combo-text">Traceability solutions meeting strict EU and US standards.</div></div>
+      `,
+      gen_cdo_combo: `
+        <div class="combo-item"><span class="combo-code">D.1 — Succession</span><div class="combo-text">Building succession roadmaps and training core management teams for family businesses.</div></div>
+      `,
+      // Insights Page
+      ins_h1: 'Insights — <span class="accent">Knowledge & Action.</span>',
+      ins_lede: 'Market data, expert perspectives, and practical lessons from 3S projects.',
+      ins_filter_all: 'All',
+      ins_featured: 'Featured Articles',
+      ins_aside_topics: 'Topics',
+      ins_aside_diag: 'Free Diagnostic',
+      ins_aside_news: 'Newsletter',
     }
   };
 
@@ -631,6 +964,14 @@
       </button>
 
       <nav class="nav-links" id="navLinks">
+        <div class="nav-mobile-top">
+          <div class="lang-switcher">
+            <button class="${lang==='vi'?'active':''}" data-lang="vi">VI</button>
+            <span class="sep">/</span>
+            <button class="${lang==='en'?'active':''}" data-lang="en">EN</button>
+          </div>
+          <button class="close-menu" id="closeMenu">&times;</button>
+        </div>
         ${navItems.map(n => `
           <div class="nav-item">
             <a href="${pageRoot}${n.href}" class="${n.caret?'has-caret':''} ${active===n.id?'is-active':''}">${n.label}</a>
@@ -736,6 +1077,9 @@
     overlay.classList.remove('is-active');
     document.body.classList.remove('no-scroll');
   }
+
+  const closeBtn = header.querySelector('#closeMenu');
+  if(closeBtn) closeBtn.addEventListener('click', closeMenu);
 
   menuToggle.addEventListener('click', () => {
     const opening = !navLinks.classList.contains('is-open');
