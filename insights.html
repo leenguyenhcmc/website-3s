@@ -51,13 +51,14 @@
       <div>
         <!-- Filter -->
         <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:40px;padding-bottom:32px;border-bottom:1px solid var(--border)" id="filterRow">
-          <button class="tab is-active" data-f="all" data-t="ins_filter_all">Tất cả</button>
-          <button class="tab" data-f="coffee" data-t="tab_coffee">Cà phê</button>
-          <button class="tab" data-f="cashew" data-t="tab_cashew">Cây điều</button>
-          <button class="tab" data-f="durian" data-t="tab_durian">Sầu riêng</button>
-          <button class="tab" data-f="rice" data-t="tab_rice">Gạo</button>
-          <button class="tab" data-f="pepper" data-t="tab_pepper">Hồ tiêu</button>
-          <button class="tab" data-f="seafood" data-t="tab_fish">Thuỷ sản</button>
+          <button class="btn btn-primary" data-f="all" data-t="ins_filter_all">Tất cả</button>
+          <button class="btn btn-ghost" data-f="coffee" data-t="tab_coffee">Cà phê</button>
+          <button class="btn btn-ghost" data-f="cashew" data-t="tab_cashew">Cây điều</button>
+          <button class="btn btn-ghost" data-f="durian" data-t="tab_durian">Sầu riêng</button>
+          <button class="btn btn-ghost" data-f="rice" data-t="tab_rice">Gạo</button>
+          <button class="btn btn-ghost" data-f="pepper" data-t="tab_pepper">Hồ tiêu</button>
+          <button class="btn btn-ghost" data-f="passion" data-t="tab_passion">Chanh dây</button>
+          <button class="btn btn-ghost" data-f="seafood" data-t="tab_fish">Thuỷ sản</button>
         </div>
 
         <div id="grid" class="reveal ins-grid">
@@ -208,8 +209,13 @@ document.getElementById('filterRow').addEventListener('click', e => {
   const btn = e.target.closest('[data-f]');
   if (!btn) return;
   document.querySelectorAll('[data-f]').forEach(b => {
-    b.classList.toggle('is-active', b === btn);
-    if (b !== btn) { b.classList.remove('btn-primary'); b.classList.add('tab'); }
+    if (b === btn) {
+      b.classList.add('btn-primary');
+      b.classList.remove('btn-ghost');
+    } else {
+      b.classList.remove('btn-primary');
+      b.classList.add('btn-ghost');
+    }
   });
   const f = btn.dataset.f;
   document.querySelectorAll('#grid .in-card').forEach(c => {

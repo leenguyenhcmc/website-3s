@@ -20,8 +20,8 @@
       sitemap: 'Sơ đồ trang',
       phone: '0933 48 28 38',
       // Homepage
-      hero_pill: '<span class="tdot"></span><span><strong>TechCoop × 3S</strong> · Đối tác chiến lược</span><span class="vline"></span><span>Chuyển đổi toàn diện chuỗi cung ứng nông sản</span>',
-      hero_h1: 'Biến chiến lược thành hành động —<br>tăng trưởng <span class="accent">bền vững</span> cho doanh nghiệp nông nghiệp xuất khẩu.',
+      hero_pill: '<span class="tdot"></span><span><strong>TechCoop × 3S</strong> · Thành viên thuộc hệ sinh thái TechCoop</span>',
+      hero_h1: '3S CxO - Bộ giải pháp<br>tăng trưởng toàn diện cho<br><span class="accent">Ngành nông nghiệp Công nghệ Cao</span>',
       hero_lede: 'Mô hình <strong style="color:#fff">CxO as a Service</strong>. Lãnh đạo chuyên môn thuê ngoài — không cần tuyển dụng. Quản trị chuỗi cung ứng từ nông trại đến bàn ăn. Tạo giá trị ngay từ <strong style="color:#fff">12 ngày làm việc đầu tiên</strong>.',
       hero_btn_growth: 'Hành trình tăng trưởng',
       hero_btn_arch: 'Kiến trúc chuỗi cung ứng',
@@ -33,8 +33,8 @@
       stat_value_days_lbl: 'Tạo giá trị từ ngày đầu',
       stat_nps_lbl: 'NPS từ lộ trình đầu',
       trusted_label: 'Được tin tưởng bởi',
-      roles_eyebrow: 'Mô hình nhân sự',
-      roles_h2: 'Một đội ngũ lãnh đạo. Năm trụ cột chuyên môn.',
+      roles_eyebrow: 'Giải pháp của chúng tôi',
+      roles_h2: '3S nâng tầm doanh nghiệp<br><span class="teal-text">với hiệu quả cao.</span>',
       roles_lede: 'Doanh nghiệp chỉ trả chi phí cho kết quả thực tế — không trả chi phí nhân sự cố định. CxO chuyên môn được điều phối theo nhu cầu từng giai đoạn.',
       // Roles Common
       role_cmo_h: 'Thị trường xuất khẩu',
@@ -919,30 +919,22 @@
   }
 
   const navItems = [
-    { id:'solutions',  href:'cmo.html', label: t.solutions, caret:true,
+    { id:'solutions',  href:'index.html#solutions', label: t.solutions },
+    { id:'industries', href:'mi-lat.html', label: t.industries, caret:true,
       dropdown: [
-        { title: lang==='vi'?'CMO — Thị trường XK':'CMO — Export Markets', sub: lang==='vi'?'Mở rộng kênh khách hàng quốc tế':'Expand international client channels', href: 'cmo.html' },
-        { title: lang==='vi'?'CPO — Nhà máy & Sản phẩm':'CPO — Factory & Products', sub: lang==='vi'?'Tối ưu sản xuất & chất lượng':'Optimize production & quality', href: 'cpo.html' },
-        { title: lang==='vi'?'CFO — Tài chính':'CFO — Finance', sub: lang==='vi'?'Dòng tiền & cấu trúc vốn':'Cashflow & capital structure', href: 'cfo.html' },
-        { title: lang==='vi'?'CTO — Chuyển đổi số':'CTO — Digital Transformation', sub: lang==='vi'?'ERP, Traceability & IoT':'ERP, Traceability & IoT', href: 'cto.html' },
-        { title: lang==='vi'?'CDO — Kế thừa & Tổ chức':'CDO — Succession & Org', sub: lang==='vi'?'Phát triển đội ngũ kế cận':'Develop successor teams', href: 'cdo.html' }
-      ]
-    },
-    { id:'industries', href:'ca-phe.html', label: t.industries, caret:true,
-      dropdown: [
-        { title: lang==='vi'?'Cây điều':'Cashew', sub: lang==='vi'?'Chuỗi giá trị hạt điều':'Cashew value chain', href: 'cay-dieu.html' },
-        { title: lang==='vi'?'Cà phê':'Coffee', sub: lang==='vi'?'Specialty & Commodity':'Specialty & Commodity', href: 'ca-phe.html' },
+        // { title: lang==='vi'?'Cây điều':'Cashew', sub: lang==='vi'?'Chuỗi giá trị hạt điều':'Cashew value chain', href: 'cay-dieu.html' },
+        // { title: lang==='vi'?'Cà phê':'Coffee', sub: lang==='vi'?'Specialty & Commodity':'Specialty & Commodity', href: 'ca-phe.html' },
         { title: lang==='vi'?'Sầu riêng':'Durian', sub: lang==='vi'?'Xuất khẩu chính ngạch':'Official export', href: 'sau-rieng.html' },
-        { title: lang==='vi'?'Gạo / Lúa nước':'Rice', sub: lang==='vi'?'Nông nghiệp bền vững':'Sustainable agriculture', href: 'gao.html' },
-        { title: lang==='vi'?'Hồ tiêu / Quế hồi':'Spices', sub: lang==='vi'?'Gia vị đặc sản':'Specialty spices', href: 'ho-tieu.html' },
-        { title: lang==='vi'?'Thuỷ sản':'Seafood', sub: lang==='vi'?'GlobalGAP & ASC':'GlobalGAP & ASC', href: 'thuy-san.html' },
+        // { title: lang==='vi'?'Gạo / Lúa nước':'Rice', sub: lang==='vi'?'Nông nghiệp bền vững':'Sustainable agriculture', href: 'gao.html' },
+        // { title: lang==='vi'?'Hồ tiêu / Quế hồi':'Spices', sub: lang==='vi'?'Gia vị đặc sản':'Specialty spices', href: 'ho-tieu.html' },
+        // { title: lang==='vi'?'Thuỷ sản':'Seafood', sub: lang==='vi'?'GlobalGAP & ASC':'GlobalGAP & ASC', href: 'thuy-san.html' },
         { title: lang==='vi'?'Chanh dây':'Passion Fruit', sub: lang==='vi'?'Puree & Frozen exports':'Puree & Frozen exports', href: 'chanh-day.html' },
-        { title: lang==='vi'?'Mì lát':'Cassava', sub: lang==='vi'?'Chuỗi cung ứng sắn':'Cassava supply chain', href: 'mi-lat.html' }
+        { title: lang==='vi'?'Bột mì':'Cassava', sub: lang==='vi'?'Chuỗi cung ứng bột mì':'Cassava supply chain', href: 'mi-lat.html' }
       ]
     },
-    { id:'ecosystem',  href:'he-sinh-thai.html', label: t.ecosystem },
+    // { id:'ecosystem',  href:'he-sinh-thai.html', label: t.ecosystem },
     { id:'insights',   href:'insights.html',     label: t.insights },
-    { id:'about',      href:'ve-chung-toi.html', label: t.about },
+    { id:'about',      href:'https://techcoop.com', label: t.about, targetBlank: true },
   ];
 
   // ── Header ─────────────────────────────────────────────────
@@ -974,7 +966,7 @@
         </div>
         ${navItems.map(n => `
           <div class="nav-item">
-            <a href="${pageRoot}${n.href}" class="${n.caret?'has-caret':''} ${active===n.id?'is-active':''}">${n.label}</a>
+            <a href="${n.href.startsWith('http') ? n.href : pageRoot + n.href}" class="${n.caret?'has-caret':''} ${active===n.id?'is-active':''}" ${n.targetBlank ? 'target="_blank" rel="noopener noreferrer"' : ''}>${n.label}</a>
             ${n.dropdown ? `
               <div class="dropdown ${n.dropdown.length > 5 ? 'is-grid' : ''}">
                 ${n.dropdown.map(d => `
@@ -988,7 +980,7 @@
           </div>
         `).join('')}
         <div class="nav-mobile-cta">
-           <a href="${pageRoot}lien-he.html" class="btn btn-primary">${t.contact}</a>
+           <a href="${pageRoot}index.html#contact" class="btn btn-primary" style="text-transform:uppercase">${t.contact}</a>
         </div>
       </nav>
 
@@ -998,7 +990,7 @@
           <span class="sep">/</span>
           <button class="${lang==='en'?'active':''}" data-lang="en">EN</button>
         </div>
-        <a href="${pageRoot}lien-he.html" class="btn btn-primary">${t.contact}
+        <a href="${pageRoot}index.html#contact" class="btn btn-primary" style="text-transform:uppercase">${t.contact}
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
         </a>
       </div>
@@ -1027,26 +1019,28 @@
         </div>
         <div class="foot-col">
           <h4>${t.solutions}</h4>
-          <a href="${pageRoot}cmo.html">CMO — ${lang==='vi'?'Thị trường XK':'Export Markets'}</a>
-          <a href="${pageRoot}cpo.html">CPO — ${lang==='vi'?'Nhà máy & sản phẩm':'Factory & Products'}</a>
-          <a href="${pageRoot}cfo.html">CFO — ${lang==='vi'?'Tài chính':'Finance'}</a>
-          <a href="${pageRoot}cto.html">CTO — ${lang==='vi'?'Chuyển đổi số':'Digital Transformation'}</a>
-          <a href="${pageRoot}cdo.html">CDO — ${lang==='vi'?'Kế thừa & tổ chức':'Succession & Org'}</a>
+          <a href="${pageRoot}index.html#cmo">CMO — ${lang==='vi'?'Thị trường XK':'Export Markets'}</a>
+          <a href="${pageRoot}index.html#cpo">CPO — ${lang==='vi'?'Nhà máy & sản phẩm':'Factory & Products'}</a>
+          <a href="${pageRoot}index.html#cfo">CFO — ${lang==='vi'?'Tài chính':'Finance'}</a>
+          <a href="${pageRoot}index.html#cto">CTO — ${lang==='vi'?'Chuyển đổi số':'Digital Transformation'}</a>
+          <a href="${pageRoot}index.html#cdo">CDO — ${lang==='vi'?'Kế thừa & tổ chức':'Succession & Org'}</a>
         </div>
         <div class="foot-col">
           <h4>${t.industries}</h4>
-          <a href="${pageRoot}cay-dieu.html">${lang==='vi'?'Cây điều':'Cashew'}</a>
-          <a href="${pageRoot}ca-phe.html">${lang==='vi'?'Cà phê':'Coffee'}</a>
+          <!-- <a href="${pageRoot}cay-dieu.html">${lang==='vi'?'Cây điều':'Cashew'}</a> -->
+          <!-- <a href="${pageRoot}ca-phe.html">${lang==='vi'?'Cà phê':'Coffee'}</a> -->
           <a href="${pageRoot}sau-rieng.html">${lang==='vi'?'Sầu riêng':'Durian'}</a>
-          <a href="${pageRoot}gao.html">${lang==='vi'?'Gạo':'Rice'}</a>
-          <a href="${pageRoot}ho-tieu.html">${lang==='vi'?'Hồ tiêu':'Spices'}</a>
-          <a href="${pageRoot}thuy-san.html">${lang==='vi'?'Thuỷ sản':'Seafood'}</a>
+          <a href="${pageRoot}chanh-day.html">${lang==='vi'?'Chanh dây':'Passion Fruit'}</a>
+          <a href="${pageRoot}mi-lat.html">${lang==='vi'?'Bột mì':'Cassava'}</a>
+          <!-- <a href="${pageRoot}gao.html">${lang==='vi'?'Gạo':'Rice'}</a> -->
+          <!-- <a href="${pageRoot}ho-tieu.html">${lang==='vi'?'Hồ tiêu':'Spices'}</a> -->
+          <!-- <a href="${pageRoot}thuy-san.html">${lang==='vi'?'Thuỷ sản':'Seafood'}</a> -->
         </div>
         <div class="foot-col">
           <h4>${t.contact}</h4>
-          <a href="${pageRoot}ve-chung-toi.html">${t.about}</a>
+          <a href="https://techcoop.com" target="_blank" rel="noopener noreferrer">${t.about}</a>
           <a href="${pageRoot}insights.html">${t.insights}</a>
-          <a href="${pageRoot}he-sinh-thai.html">${t.ecosystem}</a>
+          <!-- <a href="${pageRoot}he-sinh-thai.html">${t.ecosystem}</a> -->
           <a href="mailto:info@techcoop.vn" style="color:var(--teal);font-weight:700;margin-top:8px">info@techcoop.vn</a>
           <a href="tel:0933482838" style="color:var(--teal);font-weight:700">${t.phone}</a>
         </div>
